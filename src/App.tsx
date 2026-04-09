@@ -115,15 +115,15 @@ function renderNavigationLink({ href, label }: NavigationItem) {
 
 function renderPricingTierCard(
   {
-  tierLabel,
-  title,
-  price,
-  billingLabel,
-  features,
-  buttonLabel,
-  cardVariant,
-  buttonVariant,
-  accentFeatureIndex,
+    tierLabel,
+    title,
+    price,
+    billingLabel,
+    features,
+    buttonLabel,
+    cardVariant,
+    buttonVariant,
+    accentFeatureIndex,
   }: PricingTier,
   key: string,
 ) {
@@ -146,27 +146,27 @@ function renderPricingTierCard(
       key={key}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative flex min-h-[33rem] flex-col overflow-hidden px-5 pb-5 pt-4 md:px-6 md:pb-6 md:pt-5 ${cardClassName}`}
+      className={`relative flex min-h-[26.5rem] flex-col overflow-hidden px-5 pb-5 pt-4 md:min-h-[27.75rem] md:px-5 md:pb-5 md:pt-4 xl:min-h-[29rem] ${cardClassName}`}
     >
       <div className="flex flex-1 flex-col">
         <p className="font-ui text-[10px] uppercase tracking-[0.34em] text-text-dim">
           {tierLabel}
         </p>
-        <h3 className="mt-3 font-serif text-[2rem] leading-[1.08] tracking-[-0.03em] text-gold-primary md:text-[2.25rem]">
+        <h3 className="mt-2.5 font-serif text-[1.75rem] leading-[1.04] tracking-[-0.03em] text-gold-primary md:text-[1.95rem] xl:text-[2.05rem]">
           {title}
         </h3>
-        <div className="mt-6 flex items-end gap-1.5">
-          <span className="font-serif text-[3.1rem] leading-none text-text-main">
+        <div className="mt-4 flex items-end gap-1.5">
+          <span className="font-serif text-[2.55rem] leading-none text-text-main md:text-[2.75rem] xl:text-[2.95rem]">
             ${price}
           </span>
-          <span className="pb-1 font-ui text-[0.8rem] uppercase tracking-[0.2em] text-text-dim">
+          <span className="pb-1 font-ui text-[0.74rem] uppercase tracking-[0.2em] text-text-dim">
             {billingLabel}
           </span>
         </div>
-        <ul className="mt-10 space-y-4 text-[0.95rem] leading-relaxed text-copy-body">
+        <ul className="mt-7 space-y-3 text-[0.88rem] leading-relaxed text-copy-body xl:text-[0.92rem]">
           {features.map((feature, featureIndex) => (
             <li key={feature} className="flex items-start gap-3">
-              <span className="pt-0.5 text-[0.95rem] text-gold-primary">✓</span>
+              <span className="pt-0.5 text-[0.85rem] text-gold-primary">✓</span>
               <span
                 className={
                   accentFeatureIndex === featureIndex
@@ -182,7 +182,7 @@ function renderPricingTierCard(
       </div>
       <button
         type="button"
-        className={`mt-10 h-14 font-ui text-[0.78rem] uppercase tracking-[0.26em] transition-colors duration-300 ${buttonClassName}`}
+        className={`mt-7 h-12 font-ui text-[0.72rem] uppercase tracking-[0.24em] transition-colors duration-300 ${buttonClassName}`}
       >
         {buttonLabel}
       </button>
@@ -218,13 +218,13 @@ export default function App() {
 
         <section
           id="top"
-          className="mx-auto max-w-[760px] px-2 pb-16 pt-16 text-center md:pb-20 md:pt-20"
+          className="mx-auto max-w-[700px] px-2 pb-10 pt-10 text-center md:max-w-[760px] md:pb-12 md:pt-12 xl:pb-14 xl:pt-14"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-[3.9rem] leading-[0.93] tracking-[-0.055em] text-balance text-text-main md:text-[6.35rem]"
+            className="font-serif text-[3.2rem] leading-[0.92] tracking-[-0.055em] text-balance text-text-main md:text-[4.9rem] xl:text-[5.45rem]"
           >
             <span className="text-gold-primary">The Art of</span>{" "}
             <span>Total</span>
@@ -235,7 +235,7 @@ export default function App() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.75 }}
-            className="mx-auto mt-7 max-w-[34rem] text-[1rem] leading-8 text-copy-soft md:text-[1.08rem]"
+            className="mx-auto mt-5 max-w-[31rem] text-[0.96rem] leading-7 text-copy-soft md:mt-6 md:max-w-[33rem] md:text-[1rem]"
           >
             Exclusivity is not found in what gets achieved, but in what remains
             untouched. Welcome to the world&apos;s most expensive experience of
@@ -243,8 +243,8 @@ export default function App() {
           </motion.p>
         </section>
 
-        <section id="vault" className="pb-12 md:pb-16">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <section id="vault" className="pb-10 md:pb-12">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {pricingTiers.map((pricingTier) =>
               renderPricingTierCard(pricingTier, pricingTier.title),
             )}
