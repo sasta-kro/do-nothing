@@ -307,7 +307,7 @@ export default function App() {
             </blockquote>
             <div className="mt-12 h-px w-28 bg-gold-primary" />
             <p className="mt-6 font-ui text-[1.05rem] uppercase tracking-[0.3em] text-gold-primary">
-              The Earl of Void
+              The Earl of Nothingness
             </p>
             <p className="mt-3 font-ui text-[0.92rem] uppercase tracking-[0.2em] text-text-dim">
               Founding Member Since 2014
