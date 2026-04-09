@@ -101,9 +101,11 @@ export const pricingTiers: PricingTier[] = [
 export const homepageCopy = {
   brandName: "Do Nothing",
   heroLead: "The Art of",
-  heroHighlight: "Total Inactivity",
-  heroDescription:
-    "Exclusivity is not found in what gets achieved, but in what remains untouched. Welcome to the world's most expensive experience of nothingness.",
+  heroHighlight: "Doing Nothing",
+  heroDescriptionLine1:
+    "Welcome to the world's most luxurious experience of nothingness.",
+  heroDescriptionLine2:
+    "No one delivers perfected nothingness with greater precision.",
   featureTitle: "Unparalleled Absence",
   featureDescription:
     'A decade of refinement shaped the science of lack. The Swiss Alps division continues research into removing the letter "E" from all corporate communications to further reduce effort.',
@@ -124,7 +126,7 @@ export const footerLinks: FooterLink[] = [
 
 export const homepageImages = {
   staircasePlaceholder:
-    "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&w=1600&q=80",
+    "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 980'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%231d1d1d'/%3E%3Cstop offset='58%25' stop-color='%23101010'/%3E%3Cstop offset='100%25' stop-color='%230b0b0b'/%3E%3C/linearGradient%3E%3ClinearGradient id='beam' x1='0.5' y1='0' x2='0.5' y2='1'%3E%3Cstop offset='0%25' stop-color='rgba(255,255,255,0.9)'/%3E%3Cstop offset='18%25' stop-color='rgba(255,255,255,0.28)'/%3E%3Cstop offset='100%25' stop-color='rgba(255,255,255,0)'/%3E%3C/linearGradient%3E%3ClinearGradient id='step' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0%25' stop-color='%23363636'/%3E%3Cstop offset='100%25' stop-color='%23111111'/%3E%3C/linearGradient%3E%3Cfilter id='blur'%3E%3CfeGaussianBlur stdDeviation='4'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='1600' height='980' fill='url(%23bg)'/%3E%3Cpolygon points='930,0 1180,0 910,980 710,980' fill='url(%23beam)' filter='url(%23blur)' opacity='0.8'/%3E%3Crect x='0' y='78' width='640' height='86' fill='%231b1b1b' opacity='0.78'/%3E%3Cg fill='url(%23step)' opacity='0.95'%3E%3Cpolygon points='30,812 905,812 1190,915 0,915'/%3E%3Cpolygon points='150,646 845,646 1065,730 54,730'/%3E%3Cpolygon points='298,510 770,510 935,574 205,574'/%3E%3Cpolygon points='438,398 705,398 827,447 352,447'/%3E%3Cpolygon points='594,296 664,296 742,329 528,329'/%3E%3C/g%3E%3C/svg%3E",
   abstractGoldPlaceholder:
-    "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=80",
+    "data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 900'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0%25' stop-color='%23121110'/%3E%3Cstop offset='45%25' stop-color='%231d1713'/%3E%3Cstop offset='100%25' stop-color='%230d0d0d'/%3E%3C/linearGradient%3E%3ClinearGradient id='goldA' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='rgba(0,0,0,0)'/%3E%3Cstop offset='30%25' stop-color='rgba(178,123,48,0.55)'/%3E%3Cstop offset='52%25' stop-color='rgba(248,217,133,0.26)'/%3E%3Cstop offset='72%25' stop-color='rgba(0,0,0,0)'/%3E%3C/linearGradient%3E%3ClinearGradient id='goldB' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0%25' stop-color='rgba(0,0,0,0)'/%3E%3Cstop offset='34%25' stop-color='rgba(118,75,28,0.46)'/%3E%3Cstop offset='54%25' stop-color='rgba(255,222,149,0.22)'/%3E%3Cstop offset='76%25' stop-color='rgba(0,0,0,0)'/%3E%3C/linearGradient%3E%3Cfilter id='soft'%3E%3CfeGaussianBlur stdDeviation='3'/%3E%3C/filter%3E%3C/defs%3E%3Crect width='900' height='900' fill='url(%23bg)'/%3E%3Cg filter='url(%23soft)'%3E%3Crect x='-180' y='110' width='1320' height='70' rx='35' fill='url(%23goldA)' transform='rotate(17 450 450)'/%3E%3Crect x='-120' y='250' width='1260' height='62' rx='31' fill='url(%23goldB)' transform='rotate(17 450 450)'/%3E%3Crect x='-220' y='395' width='1320' height='68' rx='34' fill='url(%23goldA)' transform='rotate(17 450 450)'/%3E%3Crect x='-140' y='548' width='1240' height='60' rx='30' fill='url(%23goldB)' transform='rotate(17 450 450)'/%3E%3Crect x='-200' y='675' width='1320' height='72' rx='36' fill='url(%23goldA)' transform='rotate(17 450 450)'/%3E%3C/g%3E%3C/svg%3E",
 };

@@ -22,7 +22,8 @@ export function HeroSection() {
         transition={{ delay: 0.1, duration: 0.75 }}
         className={heroClasses.description}
       >
-        {homepageCopy.heroDescription}
+        <span className="block">{homepageCopy.heroDescriptionLine1}</span>
+        <span className="mt-1.5 block">{homepageCopy.heroDescriptionLine2}</span>
       </motion.p>
     </section>
   );

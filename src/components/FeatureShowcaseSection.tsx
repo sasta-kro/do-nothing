@@ -7,14 +7,16 @@ export function FeatureShowcaseSection() {
   return (
     <section id="heritage" className={heritageClasses.section}>
       <article className={heritageClasses.featurePanel}>
-        <img
-          src={homepageImages.staircasePlaceholder}
-          alt="Placeholder staircase scene"
-          className={heritageClasses.featureImage}
-          referrerPolicy="no-referrer"
-        />
-        <div className={heritageClasses.featureOverlay} />
-        <div className={heritageClasses.featureGlow} />
+        <div className={heritageClasses.featureVisual}>
+          <img
+            src={homepageImages.staircasePlaceholder}
+            alt="Placeholder staircase scene"
+            className={heritageClasses.featureImage}
+            referrerPolicy="no-referrer"
+          />
+          <div className={heritageClasses.featureOverlay} />
+          <div className={heritageClasses.featureGlow} />
+        </div>
         <div className={heritageClasses.featureContent}>
           <h2 className={heritageClasses.featureTitle}>
             {homepageCopy.featureTitle}
@@ -27,10 +29,13 @@ export function FeatureShowcaseSection() {
 
       <div className={heritageClasses.sideGrid}>
         <article className={heritageClasses.spotlightCard}>
-          <Sparkles
-            className={heritageClasses.spotlightIcon}
-            strokeWidth={1.6}
-          />
+          <div className={heritageClasses.spotlightIconWrap}>
+            <Sparkles
+              className={heritageClasses.spotlightIcon}
+              strokeWidth={1.55}
+            />
+            <span className={heritageClasses.spotlightAccent} />
+          </div>
           <h3 className={heritageClasses.spotlightTitle}>
             {homepageCopy.spotlightTitle}
           </h3>
@@ -47,6 +52,7 @@ export function FeatureShowcaseSection() {
             referrerPolicy="no-referrer"
           />
           <div className={heritageClasses.abstractOverlay} />
+          <p className={heritageClasses.abstractWordmark}>Nothingness</p>
         </article>
       </div>
     </section>

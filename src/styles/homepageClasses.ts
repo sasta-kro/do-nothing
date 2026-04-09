@@ -49,43 +49,50 @@ export const pricingClasses = {
 
 export const heritageClasses = {
   section:
-    "grid gap-4 pb-[4.5rem] pt-10 lg:grid-cols-[minmax(0,1.95fr)_minmax(20rem,0.88fr)]",
+    "grid gap-5 pb-[5.5rem] pt-14 lg:grid-cols-[minmax(0,2fr)_minmax(18.5rem,0.86fr)] xl:gap-6 xl:pb-[6.75rem] xl:pt-16",
   featurePanel:
-    "relative min-h-[32rem] overflow-hidden border border-white/5 bg-surface-deep",
-  featureImage: "h-full w-full object-cover grayscale",
+    "overflow-hidden border border-white/5 bg-surface-deep shadow-[0_28px_90px_rgba(0,0,0,0.26)]",
+  featureVisual:
+    "relative min-h-[17rem] overflow-hidden border-b border-white/5 bg-[#111111] md:min-h-[20rem] xl:min-h-[22rem]",
+  featureImage: "absolute inset-0 h-full w-full object-cover",
   featureOverlay:
-    "absolute inset-0 bg-[linear-gradient(180deg,rgba(15,14,14,0.24)_0%,rgba(15,14,14,0.78)_52%,rgba(15,14,14,0.98)_100%)]",
+    "absolute inset-0 bg-[linear-gradient(180deg,rgba(15,14,14,0.08)_0%,rgba(15,14,14,0.12)_28%,rgba(15,14,14,0.34)_68%,rgba(15,14,14,0.54)_100%)]",
   featureGlow:
-    "pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.02),transparent_22%),linear-gradient(90deg,rgba(255,208,87,0.02),transparent_18%)]",
-  featureContent: "absolute inset-x-0 bottom-0 p-7 md:p-10",
+    "pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.018),transparent_16%),linear-gradient(90deg,rgba(255,208,87,0.018),transparent_16%)]",
+  featureContent: "px-7 pb-8 pt-7 md:px-10 md:pb-10 md:pt-8 xl:px-11 xl:pb-11",
   featureTitle:
-    "font-serif text-[3.05rem] italic leading-none tracking-[-0.04em] text-gold-primary md:text-[4.65rem]",
+    "font-serif text-[3.1rem] italic leading-[0.95] tracking-[-0.05em] text-gold-primary md:text-[4.35rem]",
   featureDescription:
-    "mt-6 max-w-[38rem] text-[1rem] leading-8 text-copy-soft md:text-[1.08rem]",
-  sideGrid: "grid gap-4 sm:grid-cols-2 lg:grid-cols-1",
+    "mt-6 max-w-[36rem] text-[1rem] leading-[1.75] text-copy-soft md:text-[1.08rem]",
+  sideGrid: "grid gap-5 sm:grid-cols-2 lg:grid-cols-1 xl:gap-6",
   spotlightCard:
-    "flex min-h-[15.5rem] flex-col justify-center border border-gold-edge/45 bg-surface-strong px-10 py-10",
-  spotlightIcon: "h-10 w-10 text-gold-primary",
+    "relative flex min-h-[15.5rem] flex-col justify-center border border-gold-edge/40 bg-surface-strong px-10 py-10 shadow-[0_24px_72px_rgba(0,0,0,0.22)] before:absolute before:bottom-0 before:left-0 before:top-0 before:w-px before:bg-gold-primary/75 md:px-11 md:py-11",
+  spotlightIconWrap: "relative flex h-10 w-10 items-center justify-center",
+  spotlightIcon: "h-7 w-7 text-gold-primary",
+  spotlightAccent:
+    "absolute right-[2px] top-0 h-1.5 w-1.5 rounded-full bg-gold-primary",
   spotlightTitle:
-    "mt-7 font-serif text-[2.6rem] leading-none tracking-[-0.04em] text-text-main",
+    "mt-8 font-serif text-[2.05rem] leading-[0.98] tracking-[-0.04em] text-text-main md:text-[2.2rem]",
   spotlightLabel:
-    "mt-4 font-ui text-[0.95rem] uppercase tracking-[0.2em] text-text-soft",
+    "mt-4 font-ui text-[0.8rem] uppercase tracking-[0.2em] text-text-soft md:text-[0.84rem]",
   abstractPanel:
-    "relative min-h-[15rem] overflow-hidden border border-white/5 bg-surface-panel",
+    "relative min-h-[15rem] overflow-hidden border border-white/5 bg-surface-panel shadow-[0_24px_70px_rgba(0,0,0,0.22)]",
   abstractImage:
-    "h-full w-full object-cover brightness-[0.42] saturate-[0.8]",
+    "h-full w-full object-cover brightness-[0.62] saturate-[0.9]",
   abstractOverlay:
-    "absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(240,199,78,0.16),transparent_46%),linear-gradient(180deg,rgba(19,19,19,0.18)_0%,rgba(19,19,19,0.56)_100%)]",
+    "absolute inset-0 bg-[radial-gradient(circle_at_72%_38%,rgba(240,199,78,0.16),transparent_28%),linear-gradient(180deg,rgba(19,19,19,0.06)_0%,rgba(19,19,19,0.3)_100%)]",
+  abstractWordmark:
+    "absolute inset-x-0 bottom-[18%] text-center font-serif text-[4.65rem] uppercase tracking-[0.08em] text-gold-primary/10",
 } as const;
 
 export const testimonialClasses = {
-  section: "px-3 py-[4.5rem] md:px-8 md:py-24",
+  section: "px-3 py-[5.75rem] md:px-8 md:py-28 xl:py-32",
   inner:
     "mx-auto flex max-w-[1120px] flex-col items-center text-center",
-  quoteIcon: "h-10 w-10 text-white/[0.08] md:h-14 md:w-14",
+  quoteIcon: "h-12 w-12 text-white/[0.08] md:h-16 md:w-16",
   quote:
-    "mt-10 max-w-[980px] font-serif text-[2.55rem] italic leading-[1.08] tracking-[-0.04em] text-text-main md:text-[4.5rem]",
-  divider: "mt-12 h-px w-28 bg-gold-primary",
+    "mt-14 max-w-[1040px] font-serif text-[2.55rem] italic leading-[1.08] tracking-[-0.04em] text-text-main md:text-[4.2rem] xl:text-[4.55rem]",
+  divider: "mt-14 h-px w-28 bg-gold-primary",
   signature:
     "mt-6 font-ui text-[1.05rem] uppercase tracking-[0.3em] text-gold-primary",
   caption:
