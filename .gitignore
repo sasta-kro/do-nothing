@@ -9,3 +9,5 @@ coverage/
 
 .idea/
 _resources/
+.memory/
+*G*S.md
