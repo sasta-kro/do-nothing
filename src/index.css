@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Manrope:wght@200..800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Manrope", sans-serif;
+
+  --color-gold-primary: #f2ca50;
+  --color-gold-dark: #d4af37;
+  --color-obsidian: #131313;
+  --color-surface-low: #1c1b1b;
+  --color-surface-mid: #201f1f;
+  --color-surface-high: #353534;
+  --color-text-main: #e5e2e1;
+  --color-text-muted: #d0c5af;
+}
+
+@layer base {
+  body {
+    @apply bg-obsidian text-text-main font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+.gold-gradient {
+  background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+}
+
+.gold-text-gradient {
+  background: linear-gradient(135deg, #f2ca50 0%, #d4af37 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.ghost-border {
+  border: 1px solid rgba(77, 70, 53, 0.2);
+}
+
+.gilt-reveal:hover {
+  box-shadow: 0 0 15px rgba(242, 202, 80, 0.1);
+  border-color: rgba(242, 202, 80, 0.4);
+}
+
+/* Custom scrollbar for luxury feel */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #131313;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #353534;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #f2ca50;
+}
