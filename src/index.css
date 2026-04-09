@@ -21,6 +21,7 @@
 
 @layer base {
   html {
+    min-height: 100%;
     background: #141414;
   }
 
@@ -35,26 +36,14 @@
     text-rendering: optimizeLegibility;
   }
 
+  #root {
+    min-height: 100vh;
+  }
+
   a,
   button {
     cursor: pointer;
   }
-}
-
-.page-shell {
-  background:
-    radial-gradient(circle at 84% 27%, rgba(241, 199, 72, 0.045), transparent 18%),
-    radial-gradient(circle at 18% 58%, rgba(255, 255, 255, 0.02), transparent 24%);
-}
-
-.feature-panel::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent 22%),
-    linear-gradient(90deg, rgba(255, 208, 87, 0.02), transparent 18%);
-  pointer-events: none;
 }
 
 ::-webkit-scrollbar {
