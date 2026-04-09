@@ -193,11 +193,11 @@ function renderPricingTierCard(
 export default function App() {
   return (
     <main className="page-shell min-h-screen overflow-x-hidden bg-obsidian text-text-main selection:bg-gold-primary selection:text-obsidian">
-      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-6 md:px-8 lg:px-10">
+      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-4 md:px-8 md:pt-5 lg:px-10 lg:pt-5">
         <header className="flex items-center justify-between">
           <a
             href="#top"
-            className="font-serif text-[1.05rem] uppercase tracking-[0.18em] text-gold-primary"
+            className="font-serif text-[1rem] uppercase tracking-[0.18em] text-gold-primary"
           >
             Do Nothing
           </a>
@@ -209,7 +209,7 @@ export default function App() {
             ))}
             <button
               type="button"
-              className="h-10 rounded-[2px] bg-gold-primary px-5 font-ui text-[0.66rem] uppercase tracking-[0.22em] text-obsidian transition-colors duration-300 hover:bg-[#f4d562]"
+              className="h-9 rounded-[2px] bg-gold-primary px-4 font-ui text-[0.63rem] uppercase tracking-[0.22em] text-obsidian transition-colors duration-300 hover:bg-[#f4d562]"
             >
               Inquire
             </button>
@@ -218,13 +218,13 @@ export default function App() {
 
         <section
           id="top"
-          className="mx-auto max-w-[760px] px-2 pb-9 pt-9 text-center md:max-w-[820px] md:pb-10 md:pt-10 xl:pb-12 xl:pt-12"
+          className="mx-auto max-w-[760px] px-2 pb-8 pt-8 text-center md:max-w-[820px] md:pb-9 md:pt-9 xl:pb-10 xl:pt-10"
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-[3.1rem] leading-[0.92] tracking-[-0.055em] text-balance text-text-main md:text-[4.35rem] xl:text-[4.8rem]"
+            className="font-serif text-[2.95rem] leading-[0.92] tracking-[-0.055em] text-balance text-text-main md:text-[4rem] xl:text-[4.45rem]"
           >
             <span className="text-gold-primary">The Art of</span>
             <br />
@@ -234,7 +234,7 @@ export default function App() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.75 }}
-            className="mx-auto mt-5 max-w-[39rem] text-balance text-[1rem] leading-7 text-copy-soft md:mt-6"
+            className="mx-auto mt-5 max-w-[38rem] text-balance text-[0.96rem] leading-7 text-copy-soft md:mt-5.5"
           >
             Exclusivity is not found in what gets achieved, but in what remains
             untouched. Welcome to the world&apos;s most expensive experience of
@@ -242,7 +242,7 @@ export default function App() {
           </motion.p>
         </section>
 
-        <section id="vault" className="pb-9 md:pb-11">
+        <section id="vault" className="pb-9 md:pb-10">
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
             {pricingTiers.map((pricingTier) =>
               renderPricingTierCard(pricingTier, pricingTier.title),
