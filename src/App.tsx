@@ -102,6 +102,30 @@ const staircasePlaceholderImage =
 const abstractGoldPlaceholderImage =
   "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=80";
 
+const topFoldLayoutClasses = {
+  pageShell: "mx-auto max-w-[1440px] px-5 pb-8 pt-4 md:px-8 md:pt-5 lg:px-10 lg:pt-5",
+  heroSection:
+    "mx-auto max-w-[720px] px-2 pb-10 pt-7 text-center md:max-w-[760px] md:pb-12 md:pt-8 xl:pb-13 xl:pt-9",
+  heroTitle:
+    "font-serif text-[2.8rem] leading-[0.92] tracking-[-0.055em] text-balance text-text-main md:text-[3.7rem] xl:text-[4.1rem]",
+  heroCopy:
+    "mx-auto mt-6 max-w-[35rem] text-balance text-[0.9rem] leading-6.5 text-copy-soft md:mt-7",
+  pricingSection: "pb-8 md:pb-9",
+  pricingGridWrap: "mx-auto max-w-[1320px] xl:max-w-[1360px]",
+  pricingGrid: "grid gap-4 md:grid-cols-2 xl:grid-cols-4 xl:gap-5",
+  pricingCard:
+    "relative flex min-h-[22.75rem] flex-col overflow-hidden px-4.5 pb-4 pt-3.5 md:min-h-[23.75rem] md:px-4.5 md:pb-4 md:pt-3.5 xl:min-h-[24.85rem]",
+  pricingCardTitle:
+    "mt-2 font-serif text-[1.46rem] leading-[1.02] tracking-[-0.04em] text-gold-primary md:text-[1.52rem] md:whitespace-nowrap xl:text-[1.6rem]",
+  pricingPrice: "font-serif text-[2.08rem] leading-none text-text-main md:text-[2.2rem] xl:text-[2.38rem]",
+  pricingBilling:
+    "pb-1 font-ui text-[0.68rem] uppercase tracking-[0.18em] text-text-dim",
+  pricingFeatureList:
+    "mt-5 space-y-2.5 text-[0.78rem] leading-relaxed text-copy-body xl:text-[0.82rem]",
+  pricingButton:
+    "mt-5 h-10 font-ui text-[0.64rem] uppercase tracking-[0.22em] transition-colors duration-300",
+} as const;
+
 function renderNavigationLink({ href, label }: NavigationItem) {
   return (
     <a
@@ -146,27 +170,27 @@ function renderPricingTierCard(
       key={key}
       whileHover={{ y: -6 }}
       transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-      className={`relative flex min-h-[24.5rem] flex-col overflow-hidden px-5 pb-4 pt-4 md:min-h-[25.5rem] md:px-5 md:pb-4 md:pt-4 xl:min-h-[26.75rem] ${cardClassName}`}
+      className={`${topFoldLayoutClasses.pricingCard} ${cardClassName}`}
     >
       <div className="flex flex-1 flex-col">
         <p className="font-ui text-[10px] uppercase tracking-[0.34em] text-text-dim">
           {tierLabel}
         </p>
-        <h3 className="mt-2.5 font-serif text-[1.56rem] leading-[1.03] tracking-[-0.04em] text-gold-primary md:text-[1.64rem] md:whitespace-nowrap xl:text-[1.72rem]">
+        <h3 className={topFoldLayoutClasses.pricingCardTitle}>
           {title}
         </h3>
-        <div className="mt-3.5 flex items-end gap-1.5">
-          <span className="font-serif text-[2.35rem] leading-none text-text-main md:text-[2.5rem] xl:text-[2.7rem]">
+        <div className="mt-3 flex items-end gap-1.5">
+          <span className={topFoldLayoutClasses.pricingPrice}>
             ${price}
           </span>
-          <span className="pb-1 font-ui text-[0.74rem] uppercase tracking-[0.2em] text-text-dim">
+          <span className={topFoldLayoutClasses.pricingBilling}>
             {billingLabel}
           </span>
         </div>
-        <ul className="mt-6 space-y-2.5 text-[0.85rem] leading-relaxed text-copy-body xl:text-[0.89rem]">
+        <ul className={topFoldLayoutClasses.pricingFeatureList}>
           {features.map((feature, featureIndex) => (
             <li key={feature} className="flex items-start gap-3">
-              <span className="pt-0.5 text-[0.82rem] text-gold-primary">✓</span>
+              <span className="pt-0.5 text-[0.75rem] text-gold-primary">✓</span>
               <span
                 className={
                   accentFeatureIndex === featureIndex
@@ -182,7 +206,7 @@ function renderPricingTierCard(
       </div>
       <button
         type="button"
-        className={`mt-6 h-11 font-ui text-[0.69rem] uppercase tracking-[0.24em] transition-colors duration-300 ${buttonClassName}`}
+        className={`${topFoldLayoutClasses.pricingButton} ${buttonClassName}`}
       >
         {buttonLabel}
       </button>
@@ -193,7 +217,7 @@ function renderPricingTierCard(
 export default function App() {
   return (
     <main className="page-shell min-h-screen overflow-x-hidden bg-obsidian text-text-main selection:bg-gold-primary selection:text-obsidian">
-      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-4 md:px-8 md:pt-5 lg:px-10 lg:pt-5">
+      <div className={topFoldLayoutClasses.pageShell}>
         <header className="flex items-center justify-between">
           <a
             href="#top"
@@ -218,13 +242,13 @@ export default function App() {
 
         <section
           id="top"
-          className="mx-auto max-w-[760px] px-2 pb-8 pt-8 text-center md:max-w-[820px] md:pb-9 md:pt-9 xl:pb-10 xl:pt-10"
+          className={topFoldLayoutClasses.heroSection}
         >
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
-            className="font-serif text-[2.95rem] leading-[0.92] tracking-[-0.055em] text-balance text-text-main md:text-[4rem] xl:text-[4.45rem]"
+            className={topFoldLayoutClasses.heroTitle}
           >
             <span className="text-gold-primary">The Art of</span>
             <br />
@@ -234,7 +258,7 @@ export default function App() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1, duration: 0.75 }}
-            className="mx-auto mt-5 max-w-[38rem] text-balance text-[0.96rem] leading-7 text-copy-soft md:mt-5.5"
+            className={topFoldLayoutClasses.heroCopy}
           >
             Exclusivity is not found in what gets achieved, but in what remains
             untouched. Welcome to the world&apos;s most expensive experience of
@@ -242,9 +266,9 @@ export default function App() {
           </motion.p>
         </section>
 
-        <section id="vault" className="pb-9 md:pb-10">
-          <div className="mx-auto max-w-[1340px]">
-            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4 xl:gap-4">
+        <section id="vault" className={topFoldLayoutClasses.pricingSection}>
+          <div className={topFoldLayoutClasses.pricingGridWrap}>
+            <div className={topFoldLayoutClasses.pricingGrid}>
             {pricingTiers.map((pricingTier) =>
               renderPricingTierCard(pricingTier, pricingTier.title),
             )}
