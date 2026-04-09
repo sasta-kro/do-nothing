@@ -1,235 +1,343 @@
-import React from "react";
 import { motion } from "motion/react";
-import { LucideQuote, Sparkles } from "lucide-react";
+import { Quote, Sparkles } from "lucide-react";
 
-const NavItem = ({ children }: { children: React.ReactNode }) => (
-  <button 
-    onClick={() => console.log(`Navigating to: ${children}`)}
-    className="text-text-muted hover:text-gold-primary transition-colors duration-300 text-sm tracking-[0.1em] uppercase"
-  >
-    {children}
-  </button>
-);
+type NavigationItem = {
+  href: string;
+  label: string;
+};
 
-const PricingCard = ({ 
-  tier, 
-  title, 
-  price, 
-  features, 
-  buttonText, 
-  highlight = false 
-}: { 
-  tier: string; 
-  title: string; 
-  price: string; 
-  features: string[]; 
-  buttonText: string;
-  highlight?: boolean;
-}) => (
-  <motion.div 
-    whileHover={{ scale: 1.02 }}
-    className={`flex flex-col p-8 ${highlight ? 'bg-surface-mid border-t-2 border-gold-primary' : 'bg-surface-low'} transition-all duration-500 group`}
-  >
-    <span className="text-[10px] tracking-[0.2em] uppercase text-gold-dark mb-2">{tier}</span>
-    <h3 className="text-2xl mb-4 text-gold-primary">{title}</h3>
-    <div className="flex items-baseline gap-1 mb-8">
-      <span className="text-3xl font-serif">${price}</span>
-      <span className="text-xs text-text-muted uppercase tracking-widest">/ Forever</span>
-    </div>
-    
-    <ul className="flex-grow space-y-4 mb-12">
-      {features.map((feature, i) => (
-        <li key={i} className="flex items-start gap-3 text-xs text-text-muted leading-relaxed">
-          <span className="text-gold-primary mt-0.5">✓</span>
-          {feature}
-        </li>
-      ))}
-    </ul>
+type PricingTier = {
+  tierLabel: string;
+  title: string;
+  price: string;
+  billingLabel: string;
+  features: string[];
+  buttonLabel: string;
+  cardVariant: "base" | "featured" | "outlined";
+  buttonVariant: "ghost" | "gold" | "light";
+  accentFeatureIndex?: number;
+};
 
-    <button 
-      onClick={() => console.log(`Action: ${buttonText}`)}
-      className={`w-full py-4 text-[10px] tracking-[0.2em] uppercase transition-all duration-300 ${
-        highlight 
-          ? 'gold-gradient text-obsidian font-bold' 
-          : 'bg-transparent border border-white/10 text-text-muted hover:border-gold-primary hover:text-gold-primary'
-      }`}
+const navigationItems: NavigationItem[] = [
+  { href: "#heritage", label: "Heritage" },
+  { href: "#atelier", label: "Atelier" },
+  { href: "#vault", label: "The Vault" },
+];
+
+const pricingTiers: PricingTier[] = [
+  {
+    tierLabel: "Entry Tier",
+    title: "Do Nothing Free",
+    price: "0",
+    billingLabel: "/ Forever",
+    features: [
+      "Complete unproductivity",
+      "Standard atmosphere access",
+      "Guaranteed empty interface",
+    ],
+    buttonLabel: "Accept Poverty",
+    cardVariant: "base",
+    buttonVariant: "ghost",
+  },
+  {
+    tierLabel: "Gilded Status",
+    title: "Do Nothing Premium",
+    price: "1",
+    billingLabel: "/ Monthly",
+    features: [
+      "Includes all Free features",
+      "Gilded inactivity log",
+      "Synchronized breathing patterns",
+      "Increased personal pride",
+      "Bragging rights",
+    ],
+    buttonLabel: "Acquire Status",
+    cardVariant: "base",
+    buttonVariant: "ghost",
+  },
+  {
+    tierLabel: "Elite Choice",
+    title: "Do Nothing Luxury",
+    price: "12",
+    billingLabel: "/ Monthly",
+    features: [
+      "Includes all Premium features",
+      "Quantum-level idleness",
+      "Priority Do Not Disturb",
+      "Hand-signed 'Nothing' card",
+      "Advanced symbolic recognition",
+      "Optional existential validation",
+      "Non-contractual superiority",
+    ],
+    buttonLabel: "Ascend Now",
+    cardVariant: "featured",
+    buttonVariant: "gold",
+  },
+  {
+    tierLabel: "Ultimate Zenith",
+    title: "Do Nothing Infinite",
+    price: "99",
+    billingLabel: "/ Monthly",
+    features: [
+      "Includes all Luxury features",
+      "Cosmic non-existence",
+      "Exclusion from all reality",
+      "Legacy of absolute nothingness",
+      "Career boost for the resume",
+      "Irrefutable proof of success",
+      "Certified Infinite badge",
+      "Full access to nothingness",
+      "The right to do nothing, forever",
+    ],
+    buttonLabel: "Become Infinite",
+    cardVariant: "outlined",
+    buttonVariant: "light",
+    accentFeatureIndex: 8,
+  },
+];
+
+const staircasePlaceholderImage =
+  "https://images.unsplash.com/photo-1505691938895-1758d7eaa511?auto=format&fit=crop&w=1600&q=80";
+
+const abstractGoldPlaceholderImage =
+  "https://images.unsplash.com/photo-1541701494587-cb58502866ab?auto=format&fit=crop&w=1200&q=80";
+
+function renderNavigationLink({ href, label }: NavigationItem) {
+  return (
+    <a
+      href={href}
+      className="font-ui text-[11px] uppercase tracking-[0.22em] text-text-soft transition-colors duration-300 hover:text-gold-primary"
     >
-      {buttonText}
-    </button>
-  </motion.div>
-);
+      {label}
+    </a>
+  );
+}
+
+function renderPricingTierCard(
+  {
+  tierLabel,
+  title,
+  price,
+  billingLabel,
+  features,
+  buttonLabel,
+  cardVariant,
+  buttonVariant,
+  accentFeatureIndex,
+  }: PricingTier,
+  key: string,
+) {
+  const cardClassName =
+    cardVariant === "featured"
+      ? "border border-gold-edge/30 bg-surface-strong shadow-[0_26px_80px_rgba(0,0,0,0.38)] before:absolute before:left-0 before:right-0 before:top-0 before:h-[3px] before:bg-gold-primary"
+      : cardVariant === "outlined"
+        ? "border border-gold-edge/45 bg-surface-panel shadow-[0_28px_90px_rgba(0,0,0,0.34)]"
+        : "border border-white/4 bg-surface-panel";
+
+  const buttonClassName =
+    buttonVariant === "gold"
+      ? "bg-gold-primary text-obsidian hover:bg-[#f4d562]"
+      : buttonVariant === "light"
+        ? "bg-[#efedeb] text-obsidian hover:bg-white"
+        : "border border-white/8 bg-transparent text-text-main hover:border-gold-edge/40 hover:text-gold-primary";
+
+  return (
+    <motion.article
+      key={key}
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      className={`relative flex min-h-[33rem] flex-col overflow-hidden px-5 pb-5 pt-4 md:px-6 md:pb-6 md:pt-5 ${cardClassName}`}
+    >
+      <div className="flex flex-1 flex-col">
+        <p className="font-ui text-[10px] uppercase tracking-[0.34em] text-text-dim">
+          {tierLabel}
+        </p>
+        <h3 className="mt-3 font-serif text-[2rem] leading-[1.08] tracking-[-0.03em] text-gold-primary md:text-[2.25rem]">
+          {title}
+        </h3>
+        <div className="mt-6 flex items-end gap-1.5">
+          <span className="font-serif text-[3.1rem] leading-none text-text-main">
+            ${price}
+          </span>
+          <span className="pb-1 font-ui text-[0.8rem] uppercase tracking-[0.2em] text-text-dim">
+            {billingLabel}
+          </span>
+        </div>
+        <ul className="mt-10 space-y-4 text-[0.95rem] leading-relaxed text-copy-body">
+          {features.map((feature, featureIndex) => (
+            <li key={feature} className="flex items-start gap-3">
+              <span className="pt-0.5 text-[0.95rem] text-gold-primary">✓</span>
+              <span
+                className={
+                  accentFeatureIndex === featureIndex
+                    ? "text-gold-primary"
+                    : undefined
+                }
+              >
+                {feature}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <button
+        type="button"
+        className={`mt-10 h-14 font-ui text-[0.78rem] uppercase tracking-[0.26em] transition-colors duration-300 ${buttonClassName}`}
+      >
+        {buttonLabel}
+      </button>
+    </motion.article>
+  );
+}
 
 export default function App() {
   return (
-    <div className="min-h-screen selection:bg-gold-primary selection:text-obsidian">
-      {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-8 py-6 flex justify-between items-center bg-obsidian/80 backdrop-blur-md">
-        <div className="text-gold-primary font-serif text-xl tracking-[0.15em] uppercase">
-          Do Nothing
-        </div>
-        <div className="hidden md:flex items-center gap-12">
-          <NavItem>Heritage</NavItem>
-          <NavItem>Atelier</NavItem>
-          <NavItem>The Vault</NavItem>
-          <button 
-            onClick={() => console.log("Action: Inquire")}
-            className="gold-gradient text-obsidian px-6 py-2 text-xs font-bold tracking-[0.1em] uppercase rounded-sm"
+    <main className="page-shell min-h-screen overflow-x-hidden bg-obsidian text-text-main selection:bg-gold-primary selection:text-obsidian">
+      <div className="mx-auto max-w-[1440px] px-5 pb-8 pt-6 md:px-8 lg:px-10">
+        <header className="flex items-center justify-between">
+          <a
+            href="#top"
+            className="font-serif text-[1.05rem] uppercase tracking-[0.18em] text-gold-primary"
           >
-            Inquire
-          </button>
-        </div>
-      </nav>
+            Do Nothing
+          </a>
+          <div className="hidden items-center gap-10 md:flex">
+            {navigationItems.map((navigationItem) => (
+              <span key={navigationItem.label}>
+                {renderNavigationLink(navigationItem)}
+              </span>
+            ))}
+            <button
+              type="button"
+              className="h-10 rounded-[2px] bg-gold-primary px-5 font-ui text-[0.66rem] uppercase tracking-[0.22em] text-obsidian transition-colors duration-300 hover:bg-[#f4d562]"
+            >
+              Inquire
+            </button>
+          </div>
+        </header>
 
-      {/* Hero Section */}
-      <section className="pt-48 pb-32 px-4 text-center max-w-4xl mx-auto">
-        <motion.h1 
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
-          className="text-6xl md:text-8xl mb-8 leading-tight"
+        <section
+          id="top"
+          className="mx-auto max-w-[760px] px-2 pb-16 pt-16 text-center md:pb-20 md:pt-20"
         >
-          The Art of <span className="gold-text-gradient">Total Inactivity</span>
-        </motion.h1>
-        <motion.p 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.5, duration: 1 }}
-          className="text-text-muted text-lg md:text-xl max-w-2xl mx-auto leading-relaxed font-light"
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
+            className="font-serif text-[3.9rem] leading-[0.93] tracking-[-0.055em] text-balance text-text-main md:text-[6.35rem]"
+          >
+            <span className="text-gold-primary">The Art of</span>{" "}
+            <span>Total</span>
+            <br />
+            <span>Inactivity</span>
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1, duration: 0.75 }}
+            className="mx-auto mt-7 max-w-[34rem] text-[1rem] leading-8 text-copy-soft md:text-[1.08rem]"
+          >
+            Exclusivity is not found in what gets achieved, but in what remains
+            untouched. Welcome to the world&apos;s most expensive experience of
+            nothingness.
+          </motion.p>
+        </section>
+
+        <section id="vault" className="pb-12 md:pb-16">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+            {pricingTiers.map((pricingTier) =>
+              renderPricingTierCard(pricingTier, pricingTier.title),
+            )}
+          </div>
+        </section>
+
+        <section
+          id="heritage"
+          className="grid gap-4 pb-[4.5rem] pt-10 lg:grid-cols-[minmax(0,1.95fr)_minmax(20rem,0.88fr)]"
         >
-          Exclusivity is not found in what you do, but in what you refuse to achieve. 
-          Welcome to the world's most expensive experience of nothingness.
-        </motion.p>
-      </section>
+          <article className="feature-panel relative min-h-[32rem] overflow-hidden border border-white/5 bg-surface-deep">
+            <img
+              src={staircasePlaceholderImage}
+              alt="Placeholder staircase scene"
+              className="h-full w-full object-cover grayscale"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(15,14,14,0.24)_0%,rgba(15,14,14,0.78)_52%,rgba(15,14,14,0.98)_100%)]" />
+            <div className="absolute inset-x-0 bottom-0 p-7 md:p-10">
+              <h2 className="font-serif text-[3.05rem] italic leading-none tracking-[-0.04em] text-gold-primary md:text-[4.65rem]">
+                Unparalleled Absence
+              </h2>
+              <p className="mt-6 max-w-[38rem] text-[1rem] leading-8 text-copy-soft md:text-[1.08rem]">
+                A decade of refinement shaped the science of lack. The Swiss
+                Alps division continues research into removing the letter
+                &quot;E&quot; from all corporate communications to further reduce
+                effort.
+              </p>
+            </div>
+          </article>
 
-      {/* Pricing Grid */}
-      <section className="px-8 py-20 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          <PricingCard 
-            tier="Entry Tier"
-            title="Do Nothing Free"
-            price="0"
-            features={[
-              "Complete unproductivity",
-              "Standard atmosphere access",
-              "Guaranteed empty interface"
-            ]}
-            buttonText="Accept Poverty"
-          />
-          <PricingCard 
-            tier="Gilded Status"
-            title="Do Nothing Premium"
-            price="1"
-            features={[
-              "Includes all Free features",
-              "Gilded inactivity log",
-              "Synchronized breathing patterns",
-              "Increased personal pride",
-              "Bragging rights"
-            ]}
-            buttonText="Acquire Status"
-          />
-          <PricingCard 
-            tier="Elite Choice"
-            title="Do Nothing Luxury"
-            price="12"
-            highlight
-            features={[
-              "Includes all Premium features",
-              "Quantum-level idleness",
-              "Priority Do Not Disturb",
-              "Hand-signed 'Nothing' card",
-              "Advanced symbolic recognition",
-              "Optional existential validation",
-              "Non-contractual superiority"
-            ]}
-            buttonText="Ascend Now"
-          />
-          <PricingCard 
-            tier="Ultimate Zenith"
-            title="Do Nothing Infinite"
-            price="99"
-            features={[
-              "Includes all Luxury features",
-              "Cosmic non-existence",
-              "Exclusion from all reality",
-              "Legacy of absolute nothingness",
-              "Career boost for your resume",
-              "Irrefutable proof of success",
-              "Certified Infinite badge",
-              "Full access to nothingness",
-              "The right to do nothing, forever"
-            ]}
-            buttonText="Become Infinite"
-          />
-        </div>
-      </section>
+          <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-1">
+            <article className="flex min-h-[15.5rem] flex-col justify-center border border-gold-edge/45 bg-surface-strong px-10 py-10">
+              <Sparkles className="h-10 w-10 text-gold-primary" strokeWidth={1.6} />
+              <h3 className="mt-7 font-serif text-[2.6rem] leading-none tracking-[-0.04em] text-text-main">
+                100% Uptime
+              </h3>
+              <p className="mt-4 font-ui text-[0.95rem] uppercase tracking-[0.2em] text-text-soft">
+                Of doing absolutely nothing
+              </p>
+            </article>
 
-      {/* Feature Section 1 */}
-      <section className="py-32 px-8 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-        <div className="relative aspect-[4/3] overflow-hidden">
-          <img 
-            src="https://images.unsplash.com/photo-1505691938895-1758d7eaa511?q=80&w=2070&auto=format&fit=crop" 
-            alt="Minimalist Architecture" 
-            className="object-cover w-full h-full grayscale brightness-50"
-            referrerPolicy="no-referrer"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-obsidian via-transparent to-transparent"></div>
-        </div>
-        <div className="space-y-8">
-          <h2 className="text-4xl md:text-5xl italic text-gold-primary">Unparalleled Absence</h2>
-          <p className="text-text-muted leading-loose text-lg font-light">
-            We have spent a decade refining the science of lack. Our labs in the Swiss Alps are currently 
-            researching how to omit the letter 'E' from our corporate communications to further reduce effort.
+            <article className="relative min-h-[15rem] overflow-hidden border border-white/5 bg-surface-panel">
+              <img
+                src={abstractGoldPlaceholderImage}
+                alt="Placeholder abstract gold texture"
+                className="h-full w-full object-cover brightness-[0.42] saturate-[0.8]"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_40%,rgba(240,199,78,0.16),transparent_46%),linear-gradient(180deg,rgba(19,19,19,0.18)_0%,rgba(19,19,19,0.56)_100%)]" />
+            </article>
+          </div>
+        </section>
+
+        <section id="atelier" className="px-3 py-[4.5rem] md:px-8 md:py-24">
+          <div className="mx-auto flex max-w-[1120px] flex-col items-center text-center">
+            <Quote className="h-10 w-10 text-white/[0.08] md:h-14 md:w-14" strokeWidth={1.4} />
+            <blockquote className="mt-10 max-w-[980px] font-serif text-[2.55rem] italic leading-[1.08] tracking-[-0.04em] text-text-main md:text-[4.5rem]">
+              &quot;I paid $99 and received nothing. It was the most honest
+              transaction of my life. I am now more absent than ever.&quot;
+            </blockquote>
+            <div className="mt-12 h-px w-28 bg-gold-primary" />
+            <p className="mt-6 font-ui text-[1.05rem] uppercase tracking-[0.3em] text-gold-primary">
+              The Earl of Void
+            </p>
+            <p className="mt-3 font-ui text-[0.92rem] uppercase tracking-[0.2em] text-text-dim">
+              Founding Member Since 2014
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <footer className="border-t border-white/[0.06]">
+        <div className="mx-auto flex max-w-[1440px] flex-col gap-8 px-5 py-10 md:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-10">
+          <p className="font-serif text-[1rem] uppercase tracking-[0.18em] text-gold-primary">
+            Do Nothing
+          </p>
+          <nav className="flex flex-wrap gap-x-8 gap-y-4 font-ui text-[0.8rem] uppercase tracking-[0.18em] text-text-soft">
+            <a href="#top" className="transition-colors duration-300 hover:text-gold-primary">
+              Terms of Nothing
+            </a>
+            <a href="#top" className="transition-colors duration-300 hover:text-gold-primary">
+              Privacy Portfolio
+            </a>
+            <a href="#top" className="transition-colors duration-300 hover:text-gold-primary">
+              Ethics of Nothingness
+            </a>
+          </nav>
+          <p className="font-ui text-[0.78rem] uppercase tracking-[0.12em] text-text-dim">
+            © MMXIV Do Nothing International. All rights reserved.
           </p>
         </div>
-      </section>
-
-      {/* Feature Section 2 (Grid) */}
-      <section className="px-8 py-20 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="md:col-span-2 bg-surface-low p-12 flex flex-col justify-center items-center text-center space-y-6">
-          <Sparkles className="text-gold-primary w-12 h-12 mb-4" />
-          <h3 className="text-3xl">100% Uptime</h3>
-          <p className="text-gold-dark tracking-[0.2em] uppercase text-xs">Of doing absolutely nothing</p>
-        </div>
-        <div className="relative aspect-square md:aspect-auto overflow-hidden">
-          <img 
-            src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?q=80&w=2070&auto=format&fit=crop" 
-            alt="Abstract Gold" 
-            className="object-cover w-full h-full brightness-75"
-            referrerPolicy="no-referrer"
-          />
-        </div>
-      </section>
-
-      {/* Testimonial */}
-      <section className="py-40 px-8 text-center max-w-5xl mx-auto">
-        <LucideQuote className="w-12 h-12 text-gold-dark mx-auto mb-12 opacity-50" />
-        <blockquote className="text-3xl md:text-5xl font-serif italic leading-tight mb-12">
-          "I paid $99 and received nothing. It was the most honest transaction of my life. 
-          I am now more absent than ever."
-        </blockquote>
-        <div className="space-y-2">
-          <p className="text-gold-primary tracking-[0.3em] uppercase text-sm font-bold">The Earl of Void</p>
-          <p className="text-text-muted text-xs tracking-widest uppercase">Founding Member Since 2014</p>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-white/5 px-8 py-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-gold-primary font-serif tracking-[0.2em] uppercase text-sm">
-            Do Nothing
-          </div>
-          <div className="flex gap-8 text-[10px] tracking-[0.2em] uppercase text-text-muted">
-            <button onClick={() => console.log("Footer: Terms")} className="hover:text-gold-primary transition-colors">Terms of Nothing</button>
-            <button onClick={() => console.log("Footer: Privacy")} className="hover:text-gold-primary transition-colors">Privacy Portfolio</button>
-            <button onClick={() => console.log("Footer: Ethics")} className="hover:text-gold-primary transition-colors">Ethics of Nothingness</button>
-          </div>
-          <div className="text-[10px] tracking-[0.1em] text-text-muted/50 uppercase">
-            © MMXIV Do Nothing International. All rights reserved.
-          </div>
-        </div>
       </footer>
-    </div>
+    </main>
   );
 }
