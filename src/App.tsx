@@ -152,7 +152,7 @@ function renderPricingTierCard(
         <p className="font-ui text-[10px] uppercase tracking-[0.34em] text-text-dim">
           {tierLabel}
         </p>
-        <h3 className="mt-2.5 font-serif text-[1.65rem] leading-[1.04] tracking-[-0.03em] text-gold-primary md:text-[1.8rem] xl:text-[1.9rem]">
+        <h3 className="mt-2.5 font-serif text-[1.56rem] leading-[1.03] tracking-[-0.04em] text-gold-primary md:text-[1.64rem] md:whitespace-nowrap xl:text-[1.72rem]">
           {title}
         </h3>
         <div className="mt-3.5 flex items-end gap-1.5">
@@ -243,10 +243,12 @@ export default function App() {
         </section>
 
         <section id="vault" className="pb-9 md:pb-10">
-          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mx-auto max-w-[1340px]">
+            <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4 xl:gap-4">
             {pricingTiers.map((pricingTier) =>
               renderPricingTierCard(pricingTier, pricingTier.title),
             )}
+            </div>
           </div>
         </section>
 
