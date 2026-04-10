@@ -1,23 +1,22 @@
 import { homepageCopy, navigationItems } from "../content/homepage";
-import { headerClasses } from "../styles/homepageClasses";
 
 export function Header() {
   return (
-    <header className="flex items-center justify-between">
-      <a href="#top" className={headerClasses.brand}>
+    <header className="site-header">
+      <a href="#top" className="site-header__brand">
         {homepageCopy.brandName}
       </a>
-      <div className={headerClasses.navWrap}>
+      <div className="site-header__nav">
         {navigationItems.map((navigationItem) => (
           <a
             key={navigationItem.label}
             href={navigationItem.href}
-            className={headerClasses.navLink}
+            className="site-header__link"
           >
             {navigationItem.label}
           </a>
         ))}
-        <button type="button" className={headerClasses.inquiryButton}>
+        <button type="button" className="site-header__button">
           Inquire
         </button>
       </div>

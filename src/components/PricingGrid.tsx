@@ -1,12 +1,11 @@
 import { pricingTiers } from "../content/homepage";
-import { pricingClasses } from "../styles/homepageClasses";
 import { PricingTierCard } from "./PricingTierCard";
 
 export function PricingGrid() {
   return (
-    <section id="vault" className={pricingClasses.section}>
-      <div className={pricingClasses.gridWrap}>
-        <div className={pricingClasses.grid}>
+    <section id="vault" className="pricing-section">
+      <div className="pricing-grid-wrap">
+        <div className="pricing-grid">
           {pricingTiers.map((pricingTier) => (
             <PricingTierCard
               key={pricingTier.title}

@@ -1,62 +1,57 @@
 import { Sparkles } from "lucide-react";
 
 import { homepageCopy, homepageImages } from "../content/homepage";
-import { heritageClasses } from "../styles/homepageClasses";
 
 export function FeatureShowcaseSection() {
   return (
-    <section id="heritage" className={heritageClasses.section}>
-      <article className={heritageClasses.featurePanel}>
-        <div className={heritageClasses.featureVisual}>
+    <section id="heritage" className="heritage-section">
+      <article className="heritage-panel">
+        <div className="heritage-panel__visual">
           <img
             src={homepageImages.staircasePlaceholder}
             alt="Placeholder staircase scene"
-            className={heritageClasses.featureImage}
+            className="heritage-panel__image"
             referrerPolicy="no-referrer"
           />
-          <div className={heritageClasses.featureOverlay} />
-          <div className={heritageClasses.featureGlow} />
+          <div className="heritage-panel__overlay" />
+          <div className="heritage-panel__glow" />
         </div>
-        <div className={heritageClasses.featureContent}
-             style={{"outline": "1px solid white"}}
-        >
-          <h2 className={heritageClasses.featureTitle}>
+        <div className="heritage-panel__content">
+          <h2 className="heritage-panel__title">
             {homepageCopy.featureTitle}
           </h2>
-          <p className={heritageClasses.featureDescription}
-             style={{"outline": "1px solid white"}}
-          >
+          <p className="heritage-panel__description">
             {homepageCopy.featureDescription}
           </p>
         </div>
       </article>
 
-      <div className={heritageClasses.sideGrid}>
-        <article className={heritageClasses.spotlightCard}>
-          <div className={heritageClasses.spotlightIconWrap}>
+      <div className="heritage-side-grid">
+        <article className="uptime-card">
+          <div className="uptime-card__icon-wrap">
             <Sparkles
-              className={heritageClasses.spotlightIcon}
+              className="uptime-card__icon"
               strokeWidth={1.55}
             />
-            <span className={heritageClasses.spotlightAccent} />
+            <span className="uptime-card__accent" />
           </div>
-          <h3 className={heritageClasses.spotlightTitle}>
+          <h3 className="uptime-card__title">
             {homepageCopy.spotlightTitle}
           </h3>
-          <p className={heritageClasses.spotlightLabel}>
+          <p className="uptime-card__label">
             {homepageCopy.spotlightLabel}
           </p>
         </article>
 
-        <article className={heritageClasses.abstractPanel}>
+        <article className="abstract-panel">
           <img
             src={homepageImages.abstractGoldPlaceholder}
             alt="Placeholder abstract gold texture"
-            className={heritageClasses.abstractImage}
+            className="abstract-panel__image"
             referrerPolicy="no-referrer"
           />
-          <div className={heritageClasses.abstractOverlay} />
-          <p className={heritageClasses.abstractWordmark}>Nothingness</p>
+          <div className="abstract-panel__overlay" />
+          <p className="abstract-panel__wordmark">Nothingness</p>
         </article>
       </div>
     </section>

@@ -1,0 +1,29 @@
+:root {
+  --font-serif: "Noto Serif", serif;
+  --font-sans: "Inter", sans-serif;
+  --font-ui: "Manrope", sans-serif;
+
+  --color-gold-primary: #efc84e;
+  --color-gold-bright: #f4d562;
+  --color-gold-edge: #8f7930;
+  --color-obsidian: #141414;
+  --color-surface-deep: #171616;
+  --color-surface-panel: #1e1c1c;
+  --color-surface-strong: #2e2d2b;
+  --color-text-main: #f2efeb;
+  --color-text-soft: #cbc1ad;
+  --color-text-dim: #9f9789;
+  --color-copy-body: #d5cdc1;
+  --color-copy-soft: #d1c8ba;
+  --color-footer-border: rgba(255, 255, 255, 0.06);
+  --color-card-border: rgba(255, 255, 255, 0.05);
+  --color-card-border-soft: rgba(255, 255, 255, 0.04);
+  --color-card-border-ghost: rgba(255, 255, 255, 0.08);
+  --color-selection-text: #141414;
+
+  --shadow-featured-card: 0 26px 80px rgba(0, 0, 0, 0.38);
+  --shadow-outlined-card: 0 28px 90px rgba(0, 0, 0, 0.34);
+  --shadow-feature-panel: 0 28px 90px rgba(0, 0, 0, 0.26);
+  --shadow-side-panel: 0 24px 72px rgba(0, 0, 0, 0.22);
+  --shadow-abstract-panel: 0 24px 70px rgba(0, 0, 0, 0.22);
+}

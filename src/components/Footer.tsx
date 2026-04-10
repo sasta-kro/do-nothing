@@ -1,23 +1,22 @@
 import { footerLinks, homepageCopy } from "../content/homepage";
-import { footerClasses } from "../styles/homepageClasses";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/[0.06]">
-      <div className={footerClasses.shell}>
-        <p className={footerClasses.brand}>{homepageCopy.brandName}</p>
-        <nav className={footerClasses.nav}>
+    <footer className="site-footer">
+      <div className="site-footer__shell">
+        <p className="site-footer__brand">{homepageCopy.brandName}</p>
+        <nav className="site-footer__nav">
           {footerLinks.map((footerLink) => (
             <a
               key={footerLink.label}
               href={footerLink.href}
-              className={footerClasses.link}
+              className="site-footer__link"
             >
               {footerLink.label}
             </a>
           ))}
         </nav>
-        <p className={footerClasses.copyright}>
+        <p className="site-footer__copyright">
           {homepageCopy.copyrightLabel}
         </p>
       </div>
