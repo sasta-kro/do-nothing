@@ -17,11 +17,15 @@ export function FeatureShowcaseSection() {
           <div className={heritageClasses.featureOverlay} />
           <div className={heritageClasses.featureGlow} />
         </div>
-        <div className={heritageClasses.featureContent}>
+        <div className={heritageClasses.featureContent}
+             style={{"outline": "1px solid white"}}
+        >
           <h2 className={heritageClasses.featureTitle}>
             {homepageCopy.featureTitle}
           </h2>
-          <p className={heritageClasses.featureDescription}>
+          <p className={heritageClasses.featureDescription}
+             style={{"outline": "1px solid white"}}
+          >
             {homepageCopy.featureDescription}
           </p>
         </div>

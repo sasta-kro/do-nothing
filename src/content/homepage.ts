@@ -108,7 +108,7 @@ export const homepageCopy = {
     "No one delivers perfected nothingness with greater precision.",
   featureTitle: "Unparalleled Absence",
   featureDescription:
-    'A decade of refinement shaped the science of lack. The Swiss Alps division continues research into removing the letter "E" from all corporate communications to further reduce effort.',
+    'A decade of refinement shaped the science of nothingness. Our research teams, from Mount Mariana to Everest Trench division continue research into removing the letter "e" from all corporate communications to further reduce effort. Scheduled to announce on February 31st.',
   spotlightTitle: "100% Uptime",
   spotlightLabel: "Of doing absolutely nothing",
   testimonialQuote:
