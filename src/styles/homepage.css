@@ -446,10 +446,10 @@
   transform: translateY(-50%);
   text-align: center;
   font-family: var(--font-serif);
-  font-size: 4.65rem;
-  letter-spacing: 0.08em;
+  font-size: 2.3rem;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(239, 200, 78, 0.1);
+  color: rgba(239, 200, 78, 0.2);
 }
 
 .testimonial-section {
