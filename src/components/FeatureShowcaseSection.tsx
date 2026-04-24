@@ -15,14 +15,14 @@ export function FeatureShowcaseSection() {
           />
           <div className="heritage-panel__overlay" />
           <div className="heritage-panel__glow" />
-        </div>
-        <div className="heritage-panel__content">
-          <h2 className="heritage-panel__title">
-            {homepageCopy.featureTitle}
-          </h2>
-          <p className="heritage-panel__description">
-            {homepageCopy.featureDescription}
-          </p>
+          <div className="heritage-panel__content">
+            <h2 className="heritage-panel__title">
+              {homepageCopy.featureTitle}
+            </h2>
+            <p className="heritage-panel__description">
+              {homepageCopy.featureDescription}
+            </p>
+          </div>
         </div>
       </article>
 

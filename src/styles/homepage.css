@@ -280,6 +280,7 @@
 }
 
 .heritage-panel {
+  position: relative;
   overflow: hidden;
   border: 1px solid var(--color-card-border);
   background: var(--color-surface-deep);
@@ -288,9 +289,8 @@
 
 .heritage-panel__visual {
   position: relative;
-  min-height: 17rem;
+  min-height: 32rem;
   overflow: hidden;
-  border-bottom: 1px solid var(--color-card-border);
   background: #111111;
 }
 
@@ -308,9 +308,10 @@
   background: linear-gradient(
     180deg,
     rgba(15, 14, 14, 0.08) 0%,
-    rgba(15, 14, 14, 0.12) 28%,
-    rgba(15, 14, 14, 0.34) 68%,
-    rgba(15, 14, 14, 0.54) 100%
+    rgba(15, 14, 14, 0.12) 26%,
+    rgba(15, 14, 14, 0.32) 58%,
+    rgba(15, 14, 14, 0.82) 82%,
+    rgba(15, 14, 14, 0.96) 100%
   );
 }
 
@@ -324,7 +325,11 @@
 }
 
 .heritage-panel__content {
-  padding: 1.75rem 1.75rem 2rem;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 2rem 1.75rem 2rem;
 }
 
 .heritage-panel__title {
@@ -342,6 +347,7 @@
   font-size: 1rem;
   line-height: 1.75;
   color: var(--color-copy-soft);
+  text-shadow: 0 10px 35px rgba(0, 0, 0, 0.45);
 }
 
 .heritage-side-grid {
@@ -596,11 +602,11 @@
   }
 
   .heritage-panel__visual {
-    min-height: 20rem;
+    min-height: 34rem;
   }
 
   .heritage-panel__content {
-    padding: 2rem 2.5rem 2.5rem;
+    padding: 2.5rem 2.5rem 2.5rem;
   }
 
   .heritage-panel__title {
@@ -701,10 +707,11 @@
   }
 
   .heritage-panel__visual {
-    min-height: 22rem;
+    min-height: 35.5rem;
   }
 
   .heritage-panel__content {
+    padding-top: 2.75rem;
     padding-right: 2.75rem;
     padding-left: 2.75rem;
     padding-bottom: 2.75rem;
