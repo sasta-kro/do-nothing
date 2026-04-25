@@ -459,7 +459,7 @@
 }
 
 .testimonial-section {
-  padding: 3.75rem 0.75rem;
+  padding: 1rem 0.75rem;
 }
 
 .testimonial-section__inner {
@@ -630,7 +630,7 @@
   }
 
   .testimonial-section {
-    padding: 7rem 2rem;
+    padding: 1rem 2rem;
   }
 
   .testimonial-section__quote-icon {
@@ -722,8 +722,8 @@
   }
 
   .testimonial-section {
-    padding-top: 8rem;
-    padding-bottom: 8rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .testimonial-section__quote {
