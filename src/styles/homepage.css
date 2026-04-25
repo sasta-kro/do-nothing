@@ -460,7 +460,7 @@
 }
 
 .testimonial-section {
-  padding: 1rem 0.75rem;
+  padding: 1rem 2.75rem;
 }
 
 .testimonial-section__inner {
@@ -482,7 +482,7 @@
   width: min(100%, 1040px);
   margin-top: 3.5rem;
   font-family: var(--font-serif);
-  font-size: 2.55rem;
+  font-size: 1.8rem;
   font-style: italic;
   line-height: 1.08;
   letter-spacing: -0.04em;
@@ -632,7 +632,7 @@
   }
 
   .testimonial-section {
-    padding: 1rem 2rem;
+    padding: 1rem 4rem;
   }
 
   .testimonial-section__quote-icon {
@@ -641,7 +641,7 @@
   }
 
   .testimonial-section__quote {
-    font-size: 4.2rem;
+    font-size: 3rem;
   }
 }
 
@@ -725,10 +725,10 @@
 
   .testimonial-section {
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    padding-bottom: 3rem;
   }
 
   .testimonial-section__quote {
-    font-size: 4.55rem;
+    font-size: 3.2rem;
   }
 }
