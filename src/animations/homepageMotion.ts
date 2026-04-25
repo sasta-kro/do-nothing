@@ -7,6 +7,17 @@ export const homepageRevealViewport = {
   amount: 0.3,
 } as const;
 
+export const homepageStartupMotionProps = {
+  initial: "hidden",
+  animate: "visible",
+} as const;
+
+export const homepageViewportRevealMotionProps = {
+  initial: "hidden",
+  whileInView: "visible",
+  viewport: homepageRevealViewport,
+} as const;
+
 export const homepageStaggerContainer: Variants = {
   hidden: {},
   visible: {

@@ -1,6 +1,9 @@
 import { motion } from "motion/react";
 
-import { homepageStartupStaggerContainer } from "./animations/homepageMotion";
+import {
+  homepageStartupMotionProps,
+  homepageStartupStaggerContainer,
+} from "./animations/homepageMotion";
 import { FeatureShowcaseSection } from "./components/FeatureShowcaseSection";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -14,8 +17,7 @@ export default function App() {
       <div className="homepage__shell">
         <motion.div
           variants={homepageStartupStaggerContainer}
-          initial="hidden"
-          animate="visible"
+          {...homepageStartupMotionProps}
         >
           <Header />
           <HeroSection />

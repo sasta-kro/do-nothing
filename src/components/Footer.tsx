@@ -2,10 +2,14 @@ import { motion } from "motion/react";
 
 import {
   homepageFadeUpSoft,
-  homepageRevealViewport,
   homepageSoftStaggerContainer,
+  homepageViewportRevealMotionProps,
 } from "../animations/homepageMotion";
-import { footerLinks, homepageCopy } from "../content/homepage";
+import {
+  footerLinks,
+  hasFooterDocumentPopover,
+  homepageCopy,
+} from "../content/homepage";
 import { FooterDocumentLink } from "./FooterDocumentLink";
 
 export function Footer() {
@@ -13,9 +17,7 @@ export function Footer() {
     <motion.footer
       className="site-footer"
       variants={homepageSoftStaggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={homepageRevealViewport}
+      {...homepageViewportRevealMotionProps}
     >
       <motion.div className="site-footer__shell" variants={homepageSoftStaggerContainer}>
         <motion.p className="site-footer__brand" variants={homepageFadeUpSoft}>
@@ -23,7 +25,7 @@ export function Footer() {
         </motion.p>
         <motion.nav className="site-footer__nav" variants={homepageSoftStaggerContainer}>
           {footerLinks.map((footerLink) => (
-            footerLink.documentPopover ? (
+            hasFooterDocumentPopover(footerLink) ? (
               <FooterDocumentLink
                 key={footerLink.label}
                 footerLink={footerLink}

@@ -5,8 +5,8 @@ import {
   homepageFadeIn,
   homepageFadeUp,
   homepageFadeUpSoft,
-  homepageRevealViewport,
   homepageStaggerContainer,
+  homepageViewportRevealMotionProps,
 } from "../animations/homepageMotion";
 import { homepageCopy, homepageImages } from "../content/homepage";
 
@@ -16,9 +16,7 @@ export function FeatureShowcaseSection() {
       id="heritage"
       className="heritage-section"
       variants={homepageStaggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={homepageRevealViewport}
+      {...homepageViewportRevealMotionProps}
     >
       <motion.article className="heritage-panel" variants={homepageFadeUp}>
         <motion.div className="heritage-panel__visual" variants={homepageFadeIn}>

@@ -4,8 +4,8 @@ import { Quote } from "lucide-react";
 import {
   homepageFadeUp,
   homepageFadeUpSoft,
-  homepageRevealViewport,
   homepageSoftStaggerContainer,
+  homepageViewportRevealMotionProps,
 } from "../animations/homepageMotion";
 import { homepageCopy } from "../content/homepage";
 
@@ -15,9 +15,7 @@ export function TestimonialSection() {
       id="atelier"
       className="testimonial-section"
       variants={homepageSoftStaggerContainer}
-      initial="hidden"
-      whileInView="visible"
-      viewport={homepageRevealViewport}
+      {...homepageViewportRevealMotionProps}
     >
       <motion.div className="testimonial-section__inner" variants={homepageSoftStaggerContainer}>
         <motion.div variants={homepageFadeUpSoft}>

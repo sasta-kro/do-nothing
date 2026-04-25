@@ -18,17 +18,29 @@ export type PricingTier = {
   accentFeatureIndex?: number;
 };
 
+export type FooterDocumentPopover = {
+  charterLabel: string;
+  documentTitle: string;
+  documentSubtitle: string;
+  bodyLines: string[];
+  sealLabel: string;
+};
+
 export type FooterLink = {
   href: string;
   label: string;
-  documentPopover?: {
-    charterLabel: string;
-    documentTitle: string;
-    documentSubtitle: string;
-    bodyLines: string[];
-    sealLabel: string;
-  };
+  documentPopover?: FooterDocumentPopover;
 };
+
+export type FooterDocumentLink = FooterLink & {
+  documentPopover: FooterDocumentPopover;
+};
+
+export function hasFooterDocumentPopover(
+  footerLink: FooterLink,
+): footerLink is FooterDocumentLink {
+  return footerLink.documentPopover !== undefined;
+}
 
 export const navigationItems: NavigationItem[] = [
   { href: "#heritage", label: "Heritage" },

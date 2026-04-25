@@ -1,91 +1,49 @@
-import { useEffect, useId, useRef, useState } from "react";
+import { useId } from "react";
 import { motion } from "motion/react";
 
 import { homepageFadeUpSoft } from "../animations/homepageMotion";
-import type { FooterLink } from "../content/homepage";
+import type {
+  FooterDocumentPopover,
+  FooterLink,
+} from "../content/homepage";
+import { useTimedPopover } from "../hooks/useTimedPopover";
 
 type FooterDocumentLinkProps = {
-  footerLink: FooterLink;
+  footerLink: FooterLink & {
+    documentPopover: FooterDocumentPopover;
+  };
 };
 
 export function FooterDocumentLink({
   footerLink,
 }: FooterDocumentLinkProps) {
-  const [isDocumentVisible, setIsDocumentVisible] = useState(false);
   const tooltipId = useId();
-  const hoverTimerRef = useRef<number | null>(null);
-  const dismissTimerRef = useRef<number | null>(null);
-
-  useEffect(() => {
-    return () => {
-      if (hoverTimerRef.current !== null) {
-        window.clearTimeout(hoverTimerRef.current);
-      }
-
-      if (dismissTimerRef.current !== null) {
-        window.clearTimeout(dismissTimerRef.current);
-      }
-    };
-  }, []);
-
-  if (!footerLink.documentPopover) {
-    return null;
-  }
-
-  function clearHoverTimer() {
-    if (hoverTimerRef.current !== null) {
-      window.clearTimeout(hoverTimerRef.current);
-      hoverTimerRef.current = null;
-    }
-  }
-
-  function clearDismissTimer() {
-    if (dismissTimerRef.current !== null) {
-      window.clearTimeout(dismissTimerRef.current);
-      dismissTimerRef.current = null;
-    }
-  }
-
-  function scheduleDocumentReveal() {
-    clearHoverTimer();
-    clearDismissTimer();
-    hoverTimerRef.current = window.setTimeout(() => {
-      setIsDocumentVisible(true);
-      hoverTimerRef.current = null;
-    }, 400);
-  }
-
-  function revealDocument() {
-    clearHoverTimer();
-    clearDismissTimer();
-    setIsDocumentVisible(true);
-    dismissTimerRef.current = window.setTimeout(() => {
-      setIsDocumentVisible(false);
-      dismissTimerRef.current = null;
-    }, 2600);
-  }
-
-  function hideDocument() {
-    clearHoverTimer();
-    clearDismissTimer();
-    setIsDocumentVisible(false);
-  }
+  const { documentPopover } = footerLink;
+  const {
+    isPopoverVisible,
+    scheduleReveal,
+    revealWithAutoDismiss,
+    hide,
+  } = useTimedPopover({
+    revealDelayMs: 400,
+    autoDismissDelayMs: 2600,
+  });
 
   return (
     <motion.div
       className="site-footer__item"
       variants={homepageFadeUpSoft}
-      onMouseEnter={scheduleDocumentReveal}
-      onMouseLeave={hideDocument}
+      onMouseEnter={scheduleReveal}
+      onMouseLeave={hide}
     >
       <button
         type="button"
         className="site-footer__link site-footer__trigger"
         aria-describedby={tooltipId}
-        aria-expanded={isDocumentVisible}
-        onFocus={scheduleDocumentReveal}
-        onBlur={hideDocument}
-        onClick={revealDocument}
+        aria-expanded={isPopoverVisible}
+        onFocus={scheduleReveal}
+        onBlur={hide}
+        onClick={revealWithAutoDismiss}
       >
         {footerLink.label}
       </button>
@@ -93,7 +51,7 @@ export function FooterDocumentLink({
         id={tooltipId}
         role="tooltip"
         className={`footer-document${
-          isDocumentVisible ? " footer-document--visible" : ""
+          isPopoverVisible ? " footer-document--visible" : ""
         }`}
       >
         <div className="footer-document__paper">
@@ -103,16 +61,16 @@ export function FooterDocumentLink({
             <span className="footer-document__ornament-line" />
           </div>
           <p className="footer-document__charter-label">
-            {footerLink.documentPopover.charterLabel}
+            {documentPopover.charterLabel}
           </p>
           <h3 className="footer-document__title">
-            {footerLink.documentPopover.documentTitle}
+            {documentPopover.documentTitle}
           </h3>
           <p className="footer-document__subtitle">
-            {footerLink.documentPopover.documentSubtitle}
+            {documentPopover.documentSubtitle}
           </p>
           <div className="footer-document__body">
-            {footerLink.documentPopover.bodyLines.map((bodyLine) => (
+            {documentPopover.bodyLines.map((bodyLine) => (
               <p key={bodyLine} className="footer-document__body-line">
                 {bodyLine}
               </p>
@@ -124,7 +82,7 @@ export function FooterDocumentLink({
             <span className="footer-document__ornament-line" />
           </div>
           <p className="footer-document__seal-label">
-            {footerLink.documentPopover.sealLabel}
+            {documentPopover.sealLabel}
           </p>
         </div>
       </article>
