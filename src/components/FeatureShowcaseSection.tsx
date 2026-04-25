@@ -1,33 +1,49 @@
+import { motion } from "motion/react";
 import { Sparkles } from "lucide-react";
 
+import {
+  homepageFadeIn,
+  homepageFadeUp,
+  homepageFadeUpSoft,
+  homepageRevealViewport,
+  homepageStaggerContainer,
+} from "../animations/homepageMotion";
 import { homepageCopy, homepageImages } from "../content/homepage";
 
 export function FeatureShowcaseSection() {
   return (
-    <section id="heritage" className="heritage-section">
-      <article className="heritage-panel">
-        <div className="heritage-panel__visual">
-          <img
+    <motion.section
+      id="heritage"
+      className="heritage-section"
+      variants={homepageStaggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={homepageRevealViewport}
+    >
+      <motion.article className="heritage-panel" variants={homepageFadeUp}>
+        <motion.div className="heritage-panel__visual" variants={homepageFadeIn}>
+          <motion.img
             src={homepageImages.staircasePlaceholder}
             alt="Placeholder staircase scene"
             className="heritage-panel__image"
             referrerPolicy="no-referrer"
+            variants={homepageFadeIn}
           />
           <div className="heritage-panel__overlay" />
           <div className="heritage-panel__glow" />
-          <div className="heritage-panel__content">
-            <h2 className="heritage-panel__title">
+          <motion.div className="heritage-panel__content" variants={homepageFadeUpSoft}>
+            <motion.h2 className="heritage-panel__title" variants={homepageFadeUpSoft}>
               {homepageCopy.featureTitle}
-            </h2>
-            <p className="heritage-panel__description">
+            </motion.h2>
+            <motion.p className="heritage-panel__description" variants={homepageFadeUpSoft}>
               {homepageCopy.featureDescription}
-            </p>
-          </div>
-        </div>
-      </article>
+            </motion.p>
+          </motion.div>
+        </motion.div>
+      </motion.article>
 
-      <div className="heritage-side-grid">
-        <article className="uptime-card">
+      <motion.div className="heritage-side-grid" variants={homepageStaggerContainer}>
+        <motion.article className="uptime-card" variants={homepageFadeUpSoft}>
           <div className="uptime-card__icon-wrap">
             <Sparkles
               className="uptime-card__icon"
@@ -41,19 +57,20 @@ export function FeatureShowcaseSection() {
           <p className="uptime-card__label">
             {homepageCopy.spotlightLabel}
           </p>
-        </article>
+        </motion.article>
 
-        <article className="abstract-panel">
-          <img
+        <motion.article className="abstract-panel" variants={homepageFadeUpSoft}>
+          <motion.img
             src={homepageImages.abstractGoldPlaceholder}
             alt="Placeholder abstract gold texture"
             className="abstract-panel__image"
             referrerPolicy="no-referrer"
+            variants={homepageFadeIn}
           />
           <div className="abstract-panel__overlay" />
           <p className="abstract-panel__wordmark">Nothingness</p>
-        </article>
-      </div>
-    </section>
+        </motion.article>
+      </motion.div>
+    </motion.section>
   );
 }

@@ -1,12 +1,27 @@
+import { motion } from "motion/react";
+
+import {
+  homepageFadeUpSoft,
+  homepageRevealViewport,
+  homepageSoftStaggerContainer,
+} from "../animations/homepageMotion";
 import { footerLinks, homepageCopy } from "../content/homepage";
 import { FooterDocumentLink } from "./FooterDocumentLink";
 
 export function Footer() {
   return (
-    <footer className="site-footer">
-      <div className="site-footer__shell">
-        <p className="site-footer__brand">{homepageCopy.brandName}</p>
-        <nav className="site-footer__nav">
+    <motion.footer
+      className="site-footer"
+      variants={homepageSoftStaggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={homepageRevealViewport}
+    >
+      <motion.div className="site-footer__shell" variants={homepageSoftStaggerContainer}>
+        <motion.p className="site-footer__brand" variants={homepageFadeUpSoft}>
+          {homepageCopy.brandName}
+        </motion.p>
+        <motion.nav className="site-footer__nav" variants={homepageSoftStaggerContainer}>
           {footerLinks.map((footerLink) => (
             footerLink.documentPopover ? (
               <FooterDocumentLink
@@ -14,20 +29,21 @@ export function Footer() {
                 footerLink={footerLink}
               />
             ) : (
-              <a
+              <motion.a
                 key={footerLink.label}
                 href={footerLink.href}
                 className="site-footer__link"
+                variants={homepageFadeUpSoft}
               >
                 {footerLink.label}
-              </a>
+              </motion.a>
             )
           ))}
-        </nav>
-        <p className="site-footer__copyright">
+        </motion.nav>
+        <motion.p className="site-footer__copyright" variants={homepageFadeUpSoft}>
           {homepageCopy.copyrightLabel}
-        </p>
-      </div>
-    </footer>
+        </motion.p>
+      </motion.div>
+    </motion.footer>
   );
 }

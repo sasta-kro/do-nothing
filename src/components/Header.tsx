@@ -1,25 +1,45 @@
+import { motion } from "motion/react";
+
+import {
+  homepageFadeUpSoft,
+  homepageSoftStaggerContainer,
+} from "../animations/homepageMotion";
 import { homepageCopy, navigationItems } from "../content/homepage";
 
 export function Header() {
   return (
-    <header className="site-header">
-      <a href="#top" className="site-header__brand">
+    <motion.header
+      className="site-header"
+      variants={homepageSoftStaggerContainer}
+      initial="hidden"
+      animate="visible"
+    >
+      <motion.a
+        href="#top"
+        className="site-header__brand"
+        variants={homepageFadeUpSoft}
+      >
         {homepageCopy.brandName}
-      </a>
-      <div className="site-header__nav">
+      </motion.a>
+      <motion.div className="site-header__nav" variants={homepageSoftStaggerContainer}>
         {navigationItems.map((navigationItem) => (
-          <a
+          <motion.a
             key={navigationItem.label}
             href={navigationItem.href}
             className="site-header__link"
+            variants={homepageFadeUpSoft}
           >
             {navigationItem.label}
-          </a>
+          </motion.a>
         ))}
-        <button type="button" className="site-header__button">
+        <motion.button
+          type="button"
+          className="site-header__button"
+          variants={homepageFadeUpSoft}
+        >
           Inquire
-        </button>
-      </div>
-    </header>
+        </motion.button>
+      </motion.div>
+    </motion.header>
   );
 }

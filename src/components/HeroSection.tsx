@@ -1,15 +1,24 @@
 import { motion } from "motion/react";
 
+import {
+  homepageFadeUp,
+  homepageFadeUpSoft,
+  homepageSoftStaggerContainer,
+} from "../animations/homepageMotion";
 import { homepageCopy } from "../content/homepage";
 
 export function HeroSection() {
   return (
-    <section id="top" className="hero">
+    <motion.section
+      id="top"
+      className="hero"
+      variants={homepageSoftStaggerContainer}
+      initial="hidden"
+      animate="visible"
+    >
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         className="hero__title"
+        variants={homepageFadeUp}
       >
         <span className="hero__lead" data-text={homepageCopy.heroTitleTop}>
           {homepageCopy.heroTitleTop}
@@ -18,10 +27,8 @@ export function HeroSection() {
         <span className="hero__highlight">{homepageCopy.heroTitleBottom}</span>
       </motion.h1>
       <motion.p
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.1, duration: 0.75 }}
         className="hero__description"
+        variants={homepageFadeUpSoft}
       >
         <span className="hero__description-line">
           {homepageCopy.heroDescriptionLine1}
@@ -30,6 +37,6 @@ export function HeroSection() {
           {homepageCopy.heroDescriptionLine2}
         </span>
       </motion.p>
-    </section>
+    </motion.section>
   );
 }

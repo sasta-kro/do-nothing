@@ -1,19 +1,32 @@
+import { motion } from "motion/react";
+
+import {
+  homepageRevealViewport,
+  homepageStaggerContainer,
+} from "../animations/homepageMotion";
 import { pricingTiers } from "../content/homepage";
 import { PricingTierCard } from "./PricingTierCard";
 
 export function PricingGrid() {
   return (
-    <section id="vault" className="pricing-section">
+    <motion.section
+      id="vault"
+      className="pricing-section"
+      variants={homepageStaggerContainer}
+      initial="hidden"
+      animate="visible"
+      viewport={homepageRevealViewport}
+    >
       <div className="pricing-grid-wrap">
-        <div className="pricing-grid">
+        <motion.div className="pricing-grid" variants={homepageStaggerContainer}>
           {pricingTiers.map((pricingTier) => (
             <PricingTierCard
               key={pricingTier.title}
               pricingTier={pricingTier}
             />
           ))}
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </motion.section>
   );
 }

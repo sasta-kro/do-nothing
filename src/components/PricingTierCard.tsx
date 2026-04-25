@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
 
+import { homepageFadeUpSoft, homepageMotionEase } from "../animations/homepageMotion";
 import type { PricingTier } from "../content/homepage";
 
 type PricingTierCardProps = {
@@ -9,8 +10,9 @@ type PricingTierCardProps = {
 export function PricingTierCard({ pricingTier }: PricingTierCardProps) {
   return (
     <motion.article
+      variants={homepageFadeUpSoft}
       whileHover={{ y: -6 }}
-      transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.28, ease: homepageMotionEase }}
       className={`pricing-card pricing-card--${pricingTier.cardVariant}`}
     >
       <div className="pricing-card__body">

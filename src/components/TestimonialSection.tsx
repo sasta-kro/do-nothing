@@ -1,23 +1,39 @@
+import { motion } from "motion/react";
 import { Quote } from "lucide-react";
 
+import {
+  homepageFadeUp,
+  homepageFadeUpSoft,
+  homepageRevealViewport,
+  homepageSoftStaggerContainer,
+} from "../animations/homepageMotion";
 import { homepageCopy } from "../content/homepage";
 
 export function TestimonialSection() {
   return (
-    <section id="atelier" className="testimonial-section">
-      <div className="testimonial-section__inner">
-        <Quote className="testimonial-section__quote-icon" strokeWidth={1.4} />
-        <blockquote className="testimonial-section__quote">
+    <motion.section
+      id="atelier"
+      className="testimonial-section"
+      variants={homepageSoftStaggerContainer}
+      initial="hidden"
+      whileInView="visible"
+      viewport={homepageRevealViewport}
+    >
+      <motion.div className="testimonial-section__inner" variants={homepageSoftStaggerContainer}>
+        <motion.div variants={homepageFadeUpSoft}>
+          <Quote className="testimonial-section__quote-icon" strokeWidth={1.4} />
+        </motion.div>
+        <motion.blockquote className="testimonial-section__quote" variants={homepageFadeUp}>
           {homepageCopy.testimonialQuote}
-        </blockquote>
-        <div className="testimonial-section__divider" />
-        <p className="testimonial-section__signature">
+        </motion.blockquote>
+        <motion.div className="testimonial-section__divider" variants={homepageFadeUpSoft} />
+        <motion.p className="testimonial-section__signature" variants={homepageFadeUpSoft}>
           {homepageCopy.testimonialSignature}
-        </p>
-        <p className="testimonial-section__caption">
+        </motion.p>
+        <motion.p className="testimonial-section__caption" variants={homepageFadeUpSoft}>
           {homepageCopy.testimonialCaption}
-        </p>
-      </div>
-    </section>
+        </motion.p>
+      </motion.div>
+    </motion.section>
   );
 }

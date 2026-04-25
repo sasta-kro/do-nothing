@@ -1,5 +1,7 @@
 import { useEffect, useId, useRef, useState } from "react";
+import { motion } from "motion/react";
 
+import { homepageFadeUpSoft } from "../animations/homepageMotion";
 import type { FooterLink } from "../content/homepage";
 
 type FooterDocumentLinkProps = {
@@ -70,8 +72,9 @@ export function FooterDocumentLink({
   }
 
   return (
-    <div
+    <motion.div
       className="site-footer__item"
+      variants={homepageFadeUpSoft}
       onMouseEnter={scheduleDocumentReveal}
       onMouseLeave={hideDocument}
     >
@@ -125,6 +128,6 @@ export function FooterDocumentLink({
           </p>
         </div>
       </article>
-    </div>
+    </motion.div>
   );
 }
