@@ -143,7 +143,20 @@ export const footerLinks: FooterLink[] = [
       sealLabel: "Filed in Absentia",
     },
   },
-  { href: "#top", label: "Privacy Portfolio" },
+  {
+    href: "#top",
+    label: "Privacy Portfolio",
+    documentPopover: {
+      charterLabel: "Portfolio II",
+      documentTitle: "Privacy Portfolio",
+      documentSubtitle: "Confidential Register of Omission",
+      bodyLines: [
+        "Every possible measure has been taken to preserve strict discretion, maintain ceremonial confidentiality, and guard all patron records with exceptional care.",
+        "The final safeguard is practiced in its most immaculate form, as no personal information is retained at any point.",
+      ],
+      sealLabel: "Sealed in Confidence",
+    },
+  },
   {
     href: "#top",
     label: "Ethics of Nothingness",
