@@ -11,8 +11,6 @@ export function Header() {
     <motion.header
       className="site-header"
       variants={homepageSoftStaggerContainer}
-      initial="hidden"
-      animate="visible"
     >
       <motion.a
         href="#top"

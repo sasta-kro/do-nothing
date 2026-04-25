@@ -1,7 +1,7 @@
 import { motion } from "motion/react";
 
 import {
-  homepageRevealViewport,
+  homepageFadeUpSoft,
   homepageStaggerContainer,
 } from "../animations/homepageMotion";
 import { pricingTiers } from "../content/homepage";
@@ -12,12 +12,9 @@ export function PricingGrid() {
     <motion.section
       id="vault"
       className="pricing-section"
-      variants={homepageStaggerContainer}
-      initial="hidden"
-      animate="visible"
-      viewport={homepageRevealViewport}
+      variants={homepageFadeUpSoft}
     >
-      <div className="pricing-grid-wrap">
+      <motion.div className="pricing-grid-wrap" variants={homepageStaggerContainer}>
         <motion.div className="pricing-grid" variants={homepageStaggerContainer}>
           {pricingTiers.map((pricingTier) => (
             <PricingTierCard
@@ -26,7 +23,7 @@ export function PricingGrid() {
             />
           ))}
         </motion.div>
-      </div>
+      </motion.div>
     </motion.section>
   );
 }

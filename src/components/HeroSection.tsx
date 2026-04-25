@@ -13,8 +13,6 @@ export function HeroSection() {
       id="top"
       className="hero"
       variants={homepageSoftStaggerContainer}
-      initial="hidden"
-      animate="visible"
     >
       <motion.h1
         className="hero__title"

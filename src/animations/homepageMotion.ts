@@ -11,7 +11,7 @@ export const homepageStaggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.12,
+      staggerChildren: 0.18,
     },
   },
 };
@@ -20,7 +20,16 @@ export const homepageSoftStaggerContainer: Variants = {
   hidden: {},
   visible: {
     transition: {
-      staggerChildren: 0.08,
+      staggerChildren: 0.14,
+    },
+  },
+};
+
+export const homepageStartupStaggerContainer: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.24,
     },
   },
 };
@@ -28,13 +37,13 @@ export const homepageSoftStaggerContainer: Variants = {
 export const homepageFadeUp: Variants = {
   hidden: {
     opacity: 0,
-    y: 24,
+    y: 34,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.78,
+      duration: 1.02,
       ease: homepageMotionEase,
     },
   },
@@ -43,13 +52,13 @@ export const homepageFadeUp: Variants = {
 export const homepageFadeUpSoft: Variants = {
   hidden: {
     opacity: 0,
-    y: 16,
+    y: 24,
   },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 0.7,
+      duration: 0.9,
       ease: homepageMotionEase,
     },
   },
@@ -62,7 +71,7 @@ export const homepageFadeIn: Variants = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 0.72,
+      duration: 0.88,
       ease: homepageMotionEase,
     },
   },
