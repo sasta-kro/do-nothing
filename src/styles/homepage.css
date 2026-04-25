@@ -10,7 +10,7 @@
 .homepage__shell {
   width: min(100%, 1440px);
   margin: 0 auto;
-  padding: 1rem 1.25rem 2rem;
+  padding: 1rem 2.75rem 2rem;
 }
 
 .site-header {
@@ -115,7 +115,7 @@
 }
 
 .pricing-grid-wrap {
-  width: min(100%, 1320px);
+  width: min(100%, 1188px);
   margin: 0 auto;
 }
 
@@ -523,7 +523,7 @@
   margin: 0 auto;
   flex-direction: column;
   gap: 2rem;
-  padding: 2.5rem 1.25rem;
+  padding: 2.5rem 2.75rem;
 }
 
 .site-footer__nav {
@@ -554,8 +554,8 @@
 @media (min-width: 768px) {
   .homepage__shell,
   .site-footer__shell {
-    padding-right: 2rem;
-    padding-left: 2rem;
+    padding-right: 4.25rem;
+    padding-left: 4.25rem;
   }
 
   .homepage__shell {
@@ -662,8 +662,8 @@
 @media (min-width: 1280px) {
   .homepage__shell {
     padding-top: 1.25rem;
-    padding-right: 2.5rem;
-    padding-left: 2.5rem;
+    padding-right: 4.75rem;
+    padding-left: 4.75rem;
   }
 
   .hero {
@@ -676,7 +676,7 @@
   }
 
   .pricing-grid-wrap {
-    width: min(100%, 1360px);
+    width: min(100%, 1224px);
   }
 
   .pricing-grid {
