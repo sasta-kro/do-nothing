@@ -79,7 +79,7 @@
 .hero__title {
   font-family: var(--font-serif);
   font-size: 2.8rem;
-  line-height: 0.92;
+  line-height: 0.99;
   letter-spacing: -0.055em;
   text-wrap: balance;
   color: var(--color-text-main);
