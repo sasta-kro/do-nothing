@@ -103,8 +103,8 @@ export const pricingTiers: PricingTier[] = [
 
 export const homepageCopy = {
   brandName: "Do Nothing",
-  heroLead: "The Art of",
-  heroHighlight: "Doing Nothing",
+  heroTitleTop: "The Art of",
+  heroTitleBottom: "Doing Nothing",
   heroDescriptionLine1:
     "Welcome to the world's most luxurious experience of nothingness.",
   heroDescriptionLine2:
