@@ -144,7 +144,20 @@ export const footerLinks: FooterLink[] = [
     },
   },
   { href: "#top", label: "Privacy Portfolio" },
-  { href: "#top", label: "Ethics of Nothingness" },
+  {
+    href: "#top",
+    label: "Ethics of Nothingness",
+    documentPopover: {
+      charterLabel: "Ordinance I",
+      documentTitle: "Ethics of Nothingness",
+      documentSubtitle: "Perpetual Code of Refined Restraint",
+      bodyLines: [
+        "The institution remains formally committed to upholding nothingness with composure, discretion, and ceremonial permanence.",
+        "All members are encouraged to preserve dignified stillness, avoid needless exertion, and honor absence as an enduring standard.",
+      ],
+      sealLabel: "Ratified for Eternity",
+    },
+  },
 ];
 
 export const homepageImages = {
