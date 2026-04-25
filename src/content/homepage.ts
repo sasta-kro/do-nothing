@@ -21,6 +21,7 @@ export type PricingTier = {
 export type FooterLink = {
   href: string;
   label: string;
+  tooltipMessage?: string;
 };
 
 export const navigationItems: NavigationItem[] = [
@@ -122,7 +123,12 @@ export const homepageCopy = {
 };
 
 export const footerLinks: FooterLink[] = [
-  { href: "#top", label: "Terms of Nothing" },
+  {
+    href: "#top",
+    label: "Terms of Nothingness",
+    tooltipMessage:
+      "The terms of nothingness remain elegantly unwritten. Perfect absence leaves little to negotiate.",
+  },
   { href: "#top", label: "Privacy Portfolio" },
   { href: "#top", label: "Ethics of Nothingness" },
 ];
