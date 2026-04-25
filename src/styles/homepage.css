@@ -629,7 +629,7 @@
   height: 1.1rem;
   border-right: 1px solid rgba(175, 144, 59, 0.42);
   border-bottom: 1px solid rgba(175, 144, 59, 0.42);
-  background: rgb(236, 228, 206);
+  background: rgb(36, 31, 25);
   transform: translateX(-50%) rotate(45deg);
 }
 
@@ -649,11 +649,16 @@
   border: 1px solid rgba(175, 144, 59, 0.44);
   border-radius: 0.85rem;
   background:
-    radial-gradient(circle at 50% 0%, rgba(255, 247, 227, 0.95), rgba(236, 228, 206, 0.98) 40%, rgba(224, 214, 191, 0.99) 100%);
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(58, 50, 40, 0.98),
+      rgba(36, 31, 25, 0.99) 42%,
+      rgba(24, 20, 17, 0.995) 100%
+    );
   box-shadow:
     0 22px 45px rgba(0, 0, 0, 0.34),
-    inset 0 1px 0 rgba(255, 252, 241, 0.9),
-    inset 0 0 0 1px rgba(87, 66, 24, 0.08);
+    inset 0 1px 0 rgba(255, 234, 189, 0.12),
+    inset 0 0 0 1px rgba(255, 215, 128, 0.04);
   overflow: hidden;
 }
 
@@ -669,7 +674,7 @@
 
 .footer-document__paper::after {
   inset: 0.8rem;
-  border-color: rgba(110, 84, 28, 0.12);
+  border-color: rgba(255, 215, 128, 0.07);
 }
 
 .footer-document__ornament {
@@ -689,9 +694,9 @@
   width: 0.62rem;
   height: 0.62rem;
   border: 1px solid rgba(175, 144, 59, 0.72);
-  background: rgba(255, 248, 230, 0.72);
+  background: rgba(52, 43, 33, 0.9);
   transform: rotate(45deg);
-  box-shadow: 0 0 0 2px rgba(236, 228, 206, 0.9);
+  box-shadow: 0 0 0 2px rgba(36, 31, 25, 0.94);
 }
 
 .footer-document__charter-label {
@@ -700,7 +705,7 @@
   letter-spacing: 0.32em;
   text-transform: uppercase;
   text-align: center;
-  color: rgba(110, 84, 28, 0.72);
+  color: rgba(226, 192, 108, 0.78);
 }
 
 .footer-document__title {
@@ -709,7 +714,7 @@
   line-height: 1;
   letter-spacing: -0.03em;
   text-align: center;
-  color: rgb(42, 32, 11);
+  color: rgba(244, 232, 204, 0.94);
 }
 
 .footer-document__subtitle {
@@ -718,7 +723,7 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   text-align: center;
-  color: rgba(110, 84, 28, 0.72);
+  color: rgba(209, 181, 115, 0.72);
 }
 
 .footer-document__body {
@@ -734,7 +739,7 @@
   letter-spacing: 0.01em;
   text-align: center;
   text-transform: none;
-  color: rgba(38, 31, 17, 0.88);
+  color: rgba(226, 215, 191, 0.82);
 }
 
 .footer-document__seal-label {
@@ -743,7 +748,7 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
   text-align: center;
-  color: rgba(110, 84, 28, 0.75);
+  color: rgba(209, 181, 115, 0.76);
 }
 
 @media (min-width: 640px) {
