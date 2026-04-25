@@ -603,26 +603,12 @@
   cursor: pointer;
 }
 
-.site-footer__tooltip {
+.footer-document {
   position: absolute;
-  bottom: calc(100% + 1rem);
+  bottom: calc(100% + 1.15rem);
   left: 50%;
   z-index: 12;
-  width: min(19rem, 78vw);
-  padding: 1rem 1.05rem;
-  border: 1px solid rgba(143, 121, 48, 0.42);
-  border-radius: 0.55rem;
-  background:
-    linear-gradient(180deg, rgba(42, 40, 36, 0.98), rgba(22, 21, 19, 0.98));
-  box-shadow:
-    0 22px 45px rgba(0, 0, 0, 0.35),
-    inset 0 1px 0 rgba(255, 247, 220, 0.04);
-  font-family: var(--font-copy);
-  font-size: 0.78rem;
-  line-height: 1.5;
-  letter-spacing: 0.01em;
-  text-transform: none;
-  color: rgba(248, 241, 228, 0.88);
+  width: min(22.75rem, 84vw);
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
@@ -634,24 +620,130 @@
     visibility 0s linear 0.28s;
 }
 
-.site-footer__tooltip::after {
+.footer-document::after {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -0.55rem;
-  width: 1rem;
-  height: 1rem;
-  border-right: 1px solid rgba(143, 121, 48, 0.42);
-  border-bottom: 1px solid rgba(143, 121, 48, 0.42);
-  background: rgb(22, 21, 19);
+  bottom: -0.6rem;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-right: 1px solid rgba(175, 144, 59, 0.42);
+  border-bottom: 1px solid rgba(175, 144, 59, 0.42);
+  background: rgb(236, 228, 206);
   transform: translateX(-50%) rotate(45deg);
 }
 
-.site-footer__tooltip--visible {
+.footer-document--visible {
   opacity: 1;
   visibility: visible;
   transform: translate(-50%, 0);
   transition-delay: 0s;
+}
+
+.footer-document__paper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  padding: 1.3rem 1.4rem 1.25rem;
+  border: 1px solid rgba(175, 144, 59, 0.44);
+  border-radius: 0.85rem;
+  background:
+    radial-gradient(circle at 50% 0%, rgba(255, 247, 227, 0.95), rgba(236, 228, 206, 0.98) 40%, rgba(224, 214, 191, 0.99) 100%);
+  box-shadow:
+    0 22px 45px rgba(0, 0, 0, 0.34),
+    inset 0 1px 0 rgba(255, 252, 241, 0.9),
+    inset 0 0 0 1px rgba(87, 66, 24, 0.08);
+  overflow: hidden;
+}
+
+.footer-document__paper::before,
+.footer-document__paper::after {
+  content: "";
+  position: absolute;
+  inset: 0.45rem;
+  border: 1px solid rgba(175, 144, 59, 0.28);
+  border-radius: 0.55rem;
+  pointer-events: none;
+}
+
+.footer-document__paper::after {
+  inset: 0.8rem;
+  border-color: rgba(110, 84, 28, 0.12);
+}
+
+.footer-document__ornament {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.footer-document__ornament-line {
+  flex: 1 1 auto;
+  height: 1px;
+  background:
+    linear-gradient(90deg, rgba(175, 144, 59, 0), rgba(175, 144, 59, 0.7), rgba(175, 144, 59, 0));
+}
+
+.footer-document__ornament-mark {
+  width: 0.62rem;
+  height: 0.62rem;
+  border: 1px solid rgba(175, 144, 59, 0.72);
+  background: rgba(255, 248, 230, 0.72);
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 2px rgba(236, 228, 206, 0.9);
+}
+
+.footer-document__charter-label {
+  font-family: var(--font-ui);
+  font-size: 0.68rem;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(110, 84, 28, 0.72);
+}
+
+.footer-document__title {
+  font-family: var(--font-serif);
+  font-size: 1.52rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  text-align: center;
+  color: rgb(42, 32, 11);
+}
+
+.footer-document__subtitle {
+  font-family: var(--font-ui);
+  font-size: 0.71rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(110, 84, 28, 0.72);
+}
+
+.footer-document__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.footer-document__body-line {
+  font-family: var(--font-copy);
+  font-size: 0.84rem;
+  line-height: 1.62;
+  letter-spacing: 0.01em;
+  text-align: center;
+  text-transform: none;
+  color: rgba(38, 31, 17, 0.88);
+}
+
+.footer-document__seal-label {
+  font-family: var(--font-ui);
+  font-size: 0.66rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  text-align: center;
+  color: rgba(110, 84, 28, 0.75);
 }
 
 @media (min-width: 640px) {

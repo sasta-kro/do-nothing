@@ -21,7 +21,13 @@ export type PricingTier = {
 export type FooterLink = {
   href: string;
   label: string;
-  tooltipMessage?: string;
+  documentPopover?: {
+    charterLabel: string;
+    documentTitle: string;
+    documentSubtitle: string;
+    bodyLines: string[];
+    sealLabel: string;
+  };
 };
 
 export const navigationItems: NavigationItem[] = [
@@ -126,8 +132,16 @@ export const footerLinks: FooterLink[] = [
   {
     href: "#top",
     label: "Terms of Nothingness",
-    tooltipMessage:
-      "The terms of nothingness remain elegantly unwritten. Perfect absence leaves little to negotiate.",
+    documentPopover: {
+      charterLabel: "Article 0",
+      documentTitle: "Terms of Nothingness",
+      documentSubtitle: "Royal Charter of Deliberate Inaction",
+      bodyLines: [
+        "No enforceable clauses were drafted, as perfected nothingness leaves little to negotiate.",
+        "Continued curiosity constitutes ceremonial acceptance of elegant silence and ornamental absence.",
+      ],
+      sealLabel: "Filed in Absentia",
+    },
   },
   { href: "#top", label: "Privacy Portfolio" },
   { href: "#top", label: "Ethics of Nothingness" },
