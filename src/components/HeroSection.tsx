@@ -11,7 +11,9 @@ export function HeroSection() {
         transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
         className="hero__title"
       >
-        <span className="hero__lead">{homepageCopy.heroTitleTop}</span>
+        <span className="hero__lead" data-text={homepageCopy.heroTitleTop}>
+          {homepageCopy.heroTitleTop}
+        </span>
         <br />
         <span className="hero__highlight">{homepageCopy.heroTitleBottom}</span>
       </motion.h1>
