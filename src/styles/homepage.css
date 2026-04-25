@@ -79,7 +79,7 @@
 .hero__title {
   font-family: var(--font-serif);
   font-size: 2.8rem;
-  line-height: 0.99;
+  line-height: 1.1;
   letter-spacing: -0.055em;
   text-wrap: balance;
   color: var(--color-text-main);
@@ -588,10 +588,17 @@
 }
 
 .site-footer__trigger {
+  display: inline-flex;
+  align-items: center;
   padding: 0;
   border: 0;
   background: transparent;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
   color: inherit;
   cursor: pointer;
 }
