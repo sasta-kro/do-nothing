@@ -16,13 +16,11 @@ The project exists for two reasons:
 - to present a memorable polished web experience for general viewers
 - to act as a front-end craft showcase through animation, responsive layout work, content presentation, and design-driven implementation
 
-## What this project highlights
+## Current focus
 
 - premium editorial visual direction
 - responsive pricing-card layout tuned for real desktop usage
 - staged motion and scroll-based reveal behavior
-- reusable content-driven UI patterns such as document popovers
-- iterative front-end refinement with strong attention to details
 
 ## Tech summary
 
