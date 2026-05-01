@@ -211,7 +211,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.8rem;
-  padding: 1rem 1rem 0.95rem;
+  padding: 1rem 1rem 1.35rem;
   border: 1px solid rgba(175, 144, 59, 0.44);
   border-radius: 0.85rem;
   background:
@@ -317,7 +317,10 @@
 }
 
 .language-menu__footer {
-  padding-top: 0.75rem;
+  margin-top: 0.15rem;
+  padding-top: 1rem;
+  padding-right: 0.15rem;
+  padding-bottom: 0.35rem;
   border-top: 1px solid rgba(175, 144, 59, 0.16);
 }
 
