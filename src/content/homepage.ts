@@ -149,6 +149,9 @@ export const homepageCopy = {
     'A decade of refinement shaped the science of nothingness. Our research teams, from Mount Mariana to Everest Trench division continue research into removing the letter "e" from all corporate communications to further reduce effort. Scheduled to announce on February 31st.',
   spotlightTitle: "100% Uptime",
   spotlightLabel: "Of doing absolutely nothing",
+  inquiryNoticeTitle: "Sasta Inquiries",
+  inquiryNoticeBody:
+    "The formal inquiry office at sasta.dev is still being prepared for a more distinguished arrival. Admission will open soon.",
   testimonialQuote:
     '"I paid $99 and received nothing. It was the most honest transaction of my life. I am now more absent than ever."',
   testimonialSignature: "The Earl of Nothingness",

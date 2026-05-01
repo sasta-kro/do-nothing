@@ -41,13 +41,15 @@ export function Header() {
             )}
           </motion.div>
         ))}
-        <motion.button
-          type="button"
-          className="site-header__button"
-          variants={homepageFadeUpSoft}
-        >
-          Inquire
-        </motion.button>
+        <motion.div variants={homepageFadeUpSoft}>
+          <HeaderNoticeButton
+            label="Inquire"
+            noticeTitle={homepageCopy.inquiryNoticeTitle}
+            noticeBody={homepageCopy.inquiryNoticeBody}
+            triggerClassName="site-header__button site-header__trigger"
+            popoverClassName="header-notice__popover header-notice__popover--cta"
+          />
+        </motion.div>
       </motion.div>
     </motion.header>
   );
