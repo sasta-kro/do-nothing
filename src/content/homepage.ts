@@ -62,7 +62,6 @@ export type HomepageCopy = {
   inquiryNoticeBody: string;
   languageChooserCurrentLabel: string;
   languageChooserComingSoonLabel: string;
-  languageChooserAvailabilityNote: string;
   testimonialQuote: string;
   testimonialSignature: string;
   testimonialCaption: string;
@@ -102,7 +101,7 @@ const englishHomepageContent: HomepageContent = {
       label: "Language",
       chooserTitle: "Language Selection",
       chooserBody:
-        "Select the preferred edition. Russian is available now, while additional languages are still being prepared.",
+        "Russian is available now. Burmese and Thai are still being prepared.",
     },
   ],
   pricingTiers: [
@@ -196,8 +195,6 @@ const englishHomepageContent: HomepageContent = {
       "The formal inquiry office at sasta.dev is still being prepared for a more distinguished arrival. Admission will open soon.",
     languageChooserCurrentLabel: "Current",
     languageChooserComingSoonLabel: "Coming Soon",
-    languageChooserAvailabilityNote:
-      "Burmese and Thai editions remain in preparation. English stays active until those texts are ready.",
     testimonialQuote:
       '"I paid $99 and received nothing. It was the most honest transaction of my life. I am now more absent than ever."',
     testimonialSignature: "The Earl of Nothingness",
@@ -259,7 +256,7 @@ const russianHomepageContent: HomepageContent = {
       label: "Язык",
       chooserTitle: "Выбор языка",
       chooserBody:
-        "Многоязычное издание готовится с надлежащими церемониями. Русская редакция уже доступна, а дополнительные языки появятся позднее.",
+        "Русская редакция уже доступна. Бирманская и тайская версии еще готовятся.",
     },
   ],
   pricingTiers: [
@@ -353,8 +350,6 @@ const russianHomepageContent: HomepageContent = {
       "Формальная приемная на sasta.dev все еще готовится к более выдающемуся прибытию. Двери распахнутся в скором времени.",
     languageChooserCurrentLabel: "Текущий",
     languageChooserComingSoonLabel: "Скоро",
-    languageChooserAvailabilityNote:
-      "Тайская и бирманская редакции еще готовятся. До их появления основной показ остается на английском языке.",
     testimonialQuote:
       '"Я заплатил 99 долларов и не получил ровным счетом ничего. Это была самая честная сделка в моей жизни. Теперь я отсутствую как никогда прежде."',
     testimonialSignature: "Граф Небытия",

@@ -19,6 +19,7 @@ export function HeaderLanguageChooser({
   const chooserId = useId();
   const chooserContainerRef = useRef<HTMLDivElement | null>(null);
   const revealTimerRef = useRef<number | null>(null);
+  const dismissTimerRef = useRef<number | null>(null);
   const [isChooserVisible, setIsChooserVisible] = useState(false);
   const {
     activeLocaleCode,
@@ -33,7 +34,7 @@ export function HeaderLanguageChooser({
         chooserContainerRef.current !== null &&
         !chooserContainerRef.current.contains(pointerEvent.target as Node)
       ) {
-        hideChooser();
+        hideChooserImmediately();
       }
     }
 
@@ -42,6 +43,7 @@ export function HeaderLanguageChooser({
     return () => {
       document.removeEventListener("pointerdown", handlePointerDown);
       clearRevealTimer();
+      clearDismissTimer();
     };
   }, []);
 
@@ -52,33 +54,52 @@ export function HeaderLanguageChooser({
     }
   }
 
+  function clearDismissTimer() {
+    if (dismissTimerRef.current !== null) {
+      window.clearTimeout(dismissTimerRef.current);
+      dismissTimerRef.current = null;
+    }
+  }
+
   function scheduleReveal() {
     clearRevealTimer();
+    clearDismissTimer();
     revealTimerRef.current = window.setTimeout(() => {
       setIsChooserVisible(true);
       revealTimerRef.current = null;
     }, 220);
   }
 
-  function hideChooser() {
+  function scheduleHide() {
     clearRevealTimer();
+    clearDismissTimer();
+    dismissTimerRef.current = window.setTimeout(() => {
+      setIsChooserVisible(false);
+      dismissTimerRef.current = null;
+    }, 140);
+  }
+
+  function hideChooserImmediately() {
+    clearRevealTimer();
+    clearDismissTimer();
     setIsChooserVisible(false);
   }
 
   function toggleChooser() {
     clearRevealTimer();
+    clearDismissTimer();
     setIsChooserVisible((currentVisibility) => !currentVisibility);
   }
 
   function handleBlur(blurEvent: FocusEvent<HTMLDivElement>) {
     if (!blurEvent.currentTarget.contains(blurEvent.relatedTarget)) {
-      hideChooser();
+      hideChooserImmediately();
     }
   }
 
   function handleLanguageSelection(localeCode: "en" | "ru") {
     selectLocale(localeCode);
-    hideChooser();
+    hideChooserImmediately();
   }
 
   return (
@@ -86,7 +107,7 @@ export function HeaderLanguageChooser({
       ref={chooserContainerRef}
       className="language-menu"
       onMouseEnter={scheduleReveal}
-      onMouseLeave={hideChooser}
+      onMouseLeave={scheduleHide}
       onBlur={handleBlur}
     >
       <button
@@ -101,18 +122,14 @@ export function HeaderLanguageChooser({
       </button>
       <article
         id={chooserId}
+        aria-label={navigationItem.chooserTitle}
         className={`language-menu__popover${
           isChooserVisible ? " language-menu__popover--visible" : ""
         }`}
+        onMouseEnter={scheduleReveal}
+        onMouseLeave={scheduleHide}
       >
         <div className="language-menu__paper">
-          <div className="language-menu__ornament" aria-hidden="true">
-            <span className="language-menu__ornament-line" />
-            <span className="language-menu__ornament-mark" />
-            <span className="language-menu__ornament-line" />
-          </div>
-          <p className="language-menu__title">{navigationItem.chooserTitle}</p>
-          <p className="language-menu__body">{navigationItem.chooserBody}</p>
           <div className="language-menu__options">
             {languageOptions.map((languageOption) => {
               const isCurrentLanguage =
@@ -161,9 +178,9 @@ export function HeaderLanguageChooser({
               );
             })}
           </div>
-          <p className="language-menu__note">
-            {homepageContent.homepageCopy.languageChooserAvailabilityNote}
-          </p>
+          <footer className="language-menu__footer">
+            <p className="language-menu__note">{navigationItem.chooserBody}</p>
+          </footer>
         </div>
       </article>
     </div>
