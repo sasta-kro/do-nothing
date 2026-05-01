@@ -9,7 +9,7 @@ export const russianHomepageContent: HomepageContent = {
       label: "Язык",
       chooserTitle: "Выбор языка",
       chooserBody:
-        "Русская редакция уже доступна. Бирманская и тайская версии еще готовятся.",
+        "Русская и бирманская редакции уже доступны. Тайская версия еще готовится.",
     },
   ],
   pricingTiers: [

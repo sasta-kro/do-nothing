@@ -9,7 +9,7 @@ export const englishHomepageContent: HomepageContent = {
       label: "Language",
       chooserTitle: "Language Selection",
       chooserBody:
-        "Russian is available now. Burmese and Thai are still being prepared.",
+        "Russian and Burmese are available now. Thai is still being prepared.",
     },
   ],
   pricingTiers: [

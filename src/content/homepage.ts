@@ -2,6 +2,7 @@ import abstractGoldImage from "../../res/donothing_goldenWaves.png";
 import concreteStairsImage from "../../res/donothing_concreteStairs.png";
 
 import { englishHomepageContent } from "./locales/en/homepage";
+import { burmeseHomepageContent } from "./locales/mm/homepage";
 import { russianHomepageContent } from "./locales/ru/homepage";
 import type {
   FooterDocumentLink,
@@ -43,6 +44,7 @@ export const defaultHomepageLocaleCode: HomepageLocaleCode = "en";
 
 export const homepageLocaleContentByCode: Record<HomepageLocaleCode, HomepageContent> = {
   en: englishHomepageContent,
+  mm: burmeseHomepageContent,
   ru: russianHomepageContent,
 };
 
@@ -63,7 +65,7 @@ export const homepageLanguageOptions: HomepageLanguageOption[] = [
     code: "mm",
     nativeLabel: "မြန်မာ",
     englishLabel: "Burmese",
-    availability: "coming-soon",
+    availability: "available",
   },
   {
     code: "th",

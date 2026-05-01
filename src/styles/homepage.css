@@ -488,7 +488,8 @@
   color: var(--color-gold-primary);
 }
 
-.homepage--locale-ru .pricing-card__title {
+.homepage--locale-ru .pricing-card__title,
+.homepage--locale-mm .pricing-card__title {
   letter-spacing: -0.02em;
 }
 
@@ -557,7 +558,8 @@
     color 0.3s ease;
 }
 
-.homepage--locale-ru .pricing-card__button {
+.homepage--locale-ru .pricing-card__button,
+.homepage--locale-mm .pricing-card__button {
   height: auto;
   min-height: 2.75rem;
   padding: 0.5rem 0.75rem;
@@ -1045,7 +1047,8 @@
     white-space: nowrap;
   }
 
-  .homepage--locale-ru .pricing-card__title {
+  .homepage--locale-ru .pricing-card__title,
+  .homepage--locale-mm .pricing-card__title {
     white-space: normal;
   }
 }
@@ -1103,7 +1106,8 @@
     font-size: 1.52rem;
   }
 
-  .homepage--locale-ru .pricing-card__title {
+  .homepage--locale-ru .pricing-card__title,
+  .homepage--locale-mm .pricing-card__title {
     font-size: 1.34rem;
     line-height: 1.06;
   }
@@ -1192,7 +1196,8 @@
     font-size: 1.6rem;
   }
 
-  .homepage--locale-ru .pricing-card__title {
+  .homepage--locale-ru .pricing-card__title,
+  .homepage--locale-mm .pricing-card__title {
     font-size: 1.42rem;
   }
 
