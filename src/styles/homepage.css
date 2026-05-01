@@ -40,6 +40,8 @@
 }
 
 .site-header__link {
+  display: inline-flex;
+  align-items: center;
   font-family: var(--font-ui);
   font-size: 11px;
   letter-spacing: 0.22em;
@@ -67,6 +69,90 @@
 
 .site-header__button:hover {
   background: var(--color-gold-bright);
+}
+
+.site-header__nav-trigger {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+.site-header__trigger {
+  border: 0;
+  cursor: pointer;
+}
+
+.header-notice {
+  position: relative;
+  display: inline-flex;
+}
+
+.header-notice__popover {
+  position: absolute;
+  top: calc(100% + 1rem);
+  right: 0;
+  z-index: 12;
+  width: min(18rem, 76vw);
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(143, 121, 48, 0.4);
+  border-radius: 0.6rem;
+  background:
+    linear-gradient(180deg, rgba(36, 32, 28, 0.98), rgba(22, 20, 18, 0.99));
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 238, 198, 0.08);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(0.4rem);
+  transition:
+    opacity 0.24s ease,
+    transform 0.24s ease,
+    visibility 0s linear 0.24s;
+}
+
+.header-notice__popover::before {
+  content: "";
+  position: absolute;
+  top: -0.48rem;
+  right: 1.1rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  border-top: 1px solid rgba(143, 121, 48, 0.4);
+  border-left: 1px solid rgba(143, 121, 48, 0.4);
+  background: rgb(34, 31, 27);
+  transform: rotate(45deg);
+}
+
+.header-notice__popover--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition-delay: 0s;
+}
+
+.header-notice__popover--cta {
+  width: min(20rem, 82vw);
+}
+
+.header-notice__title {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  letter-spacing: -0.02em;
+  color: var(--color-gold-primary);
+}
+
+.header-notice__body {
+  margin-top: 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  color: var(--color-copy-soft);
 }
 
 .hero {
