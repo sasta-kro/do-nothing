@@ -16,11 +16,12 @@ import {
 } from "./localization/HomepageLocaleProvider";
 
 function HomepageLayout() {
-  const { activeLocaleCode } = useHomepageLocale();
+  const { activeLocaleCode, activeLocaleTypographyProfile } =
+    useHomepageLocale();
 
   return (
     <main
-      className={`homepage homepage--locale-${activeLocaleCode}`}
+      className={`homepage homepage--locale-${activeLocaleCode} homepage--typography-${activeLocaleTypographyProfile}`}
       lang={activeLocaleCode}
     >
       <div className="homepage__shell">

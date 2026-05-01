@@ -82,3 +82,5 @@ export type HomepageLanguageOption = {
   englishLabel: string;
   availability: "available" | "coming-soon";
 };
+
+export type HomepageLocaleTypographyProfile = "tracked" | "natural";

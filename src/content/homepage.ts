@@ -13,6 +13,7 @@ import type {
   HomepageLanguageCode,
   HomepageLanguageOption,
   HomepageLocaleCode,
+  HomepageLocaleTypographyProfile,
   NavigationItem,
   NavigationLanguageItem,
   NavigationLinkItem,
@@ -28,6 +29,7 @@ export type {
   HomepageLanguageCode,
   HomepageLanguageOption,
   HomepageLocaleCode,
+  HomepageLocaleTypographyProfile,
   NavigationItem,
   NavigationLanguageItem,
   NavigationLinkItem,
@@ -46,6 +48,15 @@ export const homepageLocaleContentByCode: Record<HomepageLocaleCode, HomepageCon
   en: englishHomepageContent,
   mm: burmeseHomepageContent,
   ru: russianHomepageContent,
+};
+
+export const homepageLocaleTypographyProfileByCode: Record<
+  HomepageLocaleCode,
+  HomepageLocaleTypographyProfile
+> = {
+  en: "tracked",
+  mm: "natural",
+  ru: "tracked",
 };
 
 export const homepageLanguageOptions: HomepageLanguageOption[] = [

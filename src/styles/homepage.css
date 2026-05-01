@@ -1,10 +1,29 @@
 .homepage {
+  --homepage-tracking-ui: 0.22em;
+  --homepage-tracking-ui-soft: 0.18em;
+  --homepage-tracking-ui-wide: 0.34em;
+  --homepage-tracking-legal: 0.12em;
+  --homepage-tracking-ornament: 0.32em;
+  --homepage-tracking-seal: 0.28em;
+  --homepage-tracking-display-loose: 0.2em;
+  --homepage-tracking-signature: 0.3em;
   min-height: 100vh;
   overflow-x: hidden;
   color: var(--color-text-main);
   background:
     radial-gradient(circle at 84% 27%, rgba(241, 199, 72, 0.045), transparent 18%),
     radial-gradient(circle at 18% 58%, rgba(255, 255, 255, 0.02), transparent 24%);
+}
+
+.homepage--typography-natural {
+  --homepage-tracking-ui: 0.04em;
+  --homepage-tracking-ui-soft: 0.04em;
+  --homepage-tracking-ui-wide: 0.04em;
+  --homepage-tracking-legal: 0.03em;
+  --homepage-tracking-ornament: 0.04em;
+  --homepage-tracking-seal: 0.04em;
+  --homepage-tracking-display-loose: 0.04em;
+  --homepage-tracking-signature: 0.05em;
 }
 
 .homepage__shell {
@@ -44,7 +63,7 @@
   align-items: center;
   font-family: var(--font-ui);
   font-size: 11px;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--homepage-tracking-ui);
   text-transform: uppercase;
   color: var(--color-text-soft);
 }
@@ -61,7 +80,7 @@
   background: var(--color-gold-primary);
   font-family: var(--font-ui);
   font-size: 0.63rem;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--homepage-tracking-ui);
   text-transform: uppercase;
   color: var(--color-obsidian);
   transition: background-color 0.3s ease;
@@ -299,7 +318,7 @@
 .language-menu__option-english {
   font-family: var(--font-ui);
   font-size: 0.63rem;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--homepage-tracking-ui-soft);
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
@@ -311,7 +330,7 @@
   border-radius: 999px;
   font-family: var(--font-ui);
   font-size: 0.56rem;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--homepage-tracking-ui-soft);
   text-transform: uppercase;
   color: var(--color-gold-primary);
 }
@@ -474,7 +493,7 @@
 .pricing-card__tier-label {
   font-family: var(--font-ui);
   font-size: 10px;
-  letter-spacing: 0.34em;
+  letter-spacing: var(--homepage-tracking-ui-wide);
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
@@ -511,7 +530,7 @@
   padding-bottom: 0.25rem;
   font-family: var(--font-ui);
   font-size: 0.68rem;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--homepage-tracking-ui-soft);
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
@@ -550,7 +569,7 @@
   margin-top: 1.25rem;
   font-family: var(--font-ui);
   font-size: 0.64rem;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--homepage-tracking-ui);
   text-transform: uppercase;
   transition:
     background-color 0.3s ease,
@@ -739,7 +758,7 @@
   margin-top: 1rem;
   font-family: var(--font-ui);
   font-size: 0.8rem;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--homepage-tracking-display-loose);
   text-transform: uppercase;
   color: var(--color-text-soft);
 }
@@ -777,7 +796,7 @@
   text-align: center;
   font-family: var(--font-serif);
   font-size: 2.3rem;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--homepage-tracking-display-loose);
   text-transform: uppercase;
   color: rgba(239, 200, 78, 0.2);
 }
@@ -823,7 +842,7 @@
   margin-top: 1.5rem;
   font-family: var(--font-ui);
   font-size: 1.05rem;
-  letter-spacing: 0.3em;
+  letter-spacing: var(--homepage-tracking-signature);
   text-transform: uppercase;
   color: var(--color-gold-primary);
 }
@@ -832,7 +851,7 @@
   margin-top: 0.75rem;
   font-family: var(--font-ui);
   font-size: 0.92rem;
-  letter-spacing: 0.2em;
+  letter-spacing: var(--homepage-tracking-display-loose);
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
@@ -856,7 +875,7 @@
   gap: 1rem 2rem;
   font-family: var(--font-ui);
   font-size: 0.8rem;
-  letter-spacing: 0.18em;
+  letter-spacing: var(--homepage-tracking-ui-soft);
   text-transform: uppercase;
   color: var(--color-text-soft);
 }
@@ -869,7 +888,7 @@
 .site-footer__copyright {
   font-family: var(--font-ui);
   font-size: 0.78rem;
-  letter-spacing: 0.12em;
+  letter-spacing: var(--homepage-tracking-legal);
   text-transform: uppercase;
   color: var(--color-text-dim);
 }
@@ -989,7 +1008,7 @@
 .footer-document__charter-label {
   font-family: var(--font-ui);
   font-size: 0.68rem;
-  letter-spacing: 0.32em;
+  letter-spacing: var(--homepage-tracking-ornament);
   text-transform: uppercase;
   text-align: center;
   color: rgba(226, 192, 108, 0.78);
@@ -1007,7 +1026,7 @@
 .footer-document__subtitle {
   font-family: var(--font-ui);
   font-size: 0.71rem;
-  letter-spacing: 0.22em;
+  letter-spacing: var(--homepage-tracking-ui);
   text-transform: uppercase;
   text-align: center;
   color: rgba(209, 181, 115, 0.72);
@@ -1032,7 +1051,7 @@
 .footer-document__seal-label {
   font-family: var(--font-ui);
   font-size: 0.66rem;
-  letter-spacing: 0.28em;
+  letter-spacing: var(--homepage-tracking-seal);
   text-transform: uppercase;
   text-align: center;
   color: rgba(209, 181, 115, 0.76);

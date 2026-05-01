@@ -11,13 +11,16 @@ import {
   defaultHomepageLocaleCode,
   homepageLanguageOptions,
   homepageLocaleContentByCode,
+  homepageLocaleTypographyProfileByCode,
   type HomepageContent,
   type HomepageLanguageOption,
   type HomepageLocaleCode,
+  type HomepageLocaleTypographyProfile,
 } from "../content/homepage";
 
 type HomepageLocaleContextValue = {
   activeLocaleCode: HomepageLocaleCode;
+  activeLocaleTypographyProfile: HomepageLocaleTypographyProfile;
   homepageContent: HomepageContent;
   languageOptions: HomepageLanguageOption[];
   selectLocale: (localeCode: HomepageLocaleCode) => void;
@@ -58,15 +61,18 @@ export function HomepageLocaleProvider({
   }, [activeLocaleCode]);
 
   const homepageContent = homepageLocaleContentByCode[activeLocaleCode];
+  const activeLocaleTypographyProfile =
+    homepageLocaleTypographyProfileByCode[activeLocaleCode];
 
   const homepageLocaleContextValue = useMemo(
     () => ({
       activeLocaleCode,
+      activeLocaleTypographyProfile,
       homepageContent,
       languageOptions: homepageLanguageOptions,
       selectLocale: setActiveLocaleCode,
     }),
-    [activeLocaleCode, homepageContent],
+    [activeLocaleCode, activeLocaleTypographyProfile, homepageContent],
   );
 
   return (
