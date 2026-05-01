@@ -21,7 +21,7 @@ export const burmeseHomepageContent: HomepageContent = {
       features: [
         "လုံးဝ အကျိုးမဖြစ်ထွန်းမှု",
         "ပုံမှန်လေထုကို ရယူခံစားခွင့်",
-        "အလွတ်ဖြစ်နေသော မျက်နှာပြင်ကို အာမခံချက်",
+        "မျက်နှာပြင်လွတ် အာမခံချက်",
       ],
       buttonLabel: "ဆင်းရဲခြင်း ခံယူပါ",
       cardVariant: "base",
@@ -104,7 +104,7 @@ export const burmeseHomepageContent: HomepageContent = {
     languageChooserCurrentLabel: "လက်ရှိ",
     languageChooserComingSoonLabel: "မကြာမီ လာမည်",
     testimonialQuote:
-        '"ကျွန်တော် ဒေါ်လာ ၉၉ ပေးခဲ့ပြီး ဘာမှ မရခဲ့ပါဘူး။ ဒါဟာ ကျွန်တော့်ဘဝရဲ့ အကောင်းဆုံး ဝယ်ယူမှူတစ်ခုဘဲ။ အခု ကျွန်တော် အရင်ကထက် ပိုပြီး နတ္ထိသဘော ဆောင်နေပြီဗျား။"',
+        '"ကျွန်တော် ဒေါ်လာ ၉၉ ပေးခဲ့ပြီး ဘာမှ မရခဲ့ပါဘူး။ ဒါဟာ ကျွန်တော့်ဘဝရဲ့ အကောင်းဆုံး ဝယ်ယူမှုတစ်ခုပဲ။ အခု ကျွန်တော် အရင်ကထက် ပိုပြီး နတ္ထိသဘော ဆောင်နေပြီဗျား။"',
     testimonialSignature: "နတ္ထိဘုံ၏ မြို့စားကြီး",
     testimonialCaption: "၂၀၁၄ ခုနှစ်ကတည်းက တည်ထောင်သူ အဖွဲ့ဝင်",
     copyrightLabel: "© MMXIV Do Nothing by Sasta. မူပိုင်ခွင့်များ ရယူထားသည်။",
