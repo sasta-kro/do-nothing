@@ -98,7 +98,7 @@ export const russianHomepageContent: HomepageContent = {
     spotlightLabel: "В абсолютном ничегонеделании",
     abstractWordmark: "Ничто",
     inquiryButtonLabel: "Запрос",
-    inquiryNoticeTitle: "Служба запросов Sasta",
+    inquiryNoticeTitle: "Запрос",
     inquiryNoticeBody:
       "Формальная приемная на sasta.dev все еще готовится к более выдающемуся прибытию. Двери распахнутся в скором времени.",
     languageChooserCurrentLabel: "Текущий",

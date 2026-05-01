@@ -98,7 +98,7 @@ export const englishHomepageContent: HomepageContent = {
     spotlightLabel: "Of doing absolutely nothing",
     abstractWordmark: "Nothingness",
     inquiryButtonLabel: "Inquire",
-    inquiryNoticeTitle: "Sasta Inquiries",
+    inquiryNoticeTitle: "Inquiry",
     inquiryNoticeBody:
       "The formal inquiry office at sasta.dev is still being prepared for a more distinguished arrival. Admission will open soon.",
     languageChooserCurrentLabel: "Current",

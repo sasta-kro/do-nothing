@@ -98,7 +98,7 @@ export const burmeseHomepageContent: HomepageContent = {
     spotlightLabel: "လုံးဝ ဘာမှမလုပ်ခြင်း၏",
     abstractWordmark: "နတ္ထိ",
     inquiryButtonLabel: "စုံစမ်းရန်",
-    inquiryNoticeTitle: "Sasta စုံစမ်းမေးမြန်းမှုများ",
+    inquiryNoticeTitle: "စုံစမ်းမှု",
     inquiryNoticeBody:
         "sasta.dev ရှိ တရားဝင် စုံစမ်းမေးမြန်းရေးရုံးကို ပိုမို ထင်ရှားကျော်ကြားသော ရောက်ရှိလာမှုအတွက် ပြင်ဆင်နေဆဲဖြစ်သည်။ ဝင်ခွင့်ကို မကြာမီ ဖွင့်လှစ်ပါမည်။",
     languageChooserCurrentLabel: "လက်ရှိ",
