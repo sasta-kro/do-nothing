@@ -1,11 +1,13 @@
 # Do Nothing
 
-![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
-![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
-![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)
-![Motion](https://img.shields.io/badge/Motion-12-0F172A?style=for-the-badge&logo=framer&logoColor=white)
-![CSS](https://img.shields.io/badge/Plain_CSS-Styled-264DE4?style=for-the-badge&logo=css&logoColor=white)
-![Frontend Showcase](https://img.shields.io/badge/Frontend-Showcase-C89B2C?style=for-the-badge)
+**Live site:** [donothing.sasta.dev](https://donothing.sasta.dev)
+
+![React](https://img.shields.io/badge/REACT-19-1A1F2B?style=for-the-badge&logo=react&logoColor=61DAFB&labelColor=4F4F52)
+![TypeScript](https://img.shields.io/badge/TYPESCRIPT-5-3A78C8?style=for-the-badge&logo=typescript&logoColor=F4F4F4&labelColor=4F4F52)
+![Vite](https://img.shields.io/badge/VITE-6-6366F1?style=for-the-badge&logo=vite&logoColor=F4F4F4&labelColor=4F4F52)
+![Motion](https://img.shields.io/badge/MOTION-12-18213E?style=for-the-badge&logo=framer&logoColor=F4F4F4&labelColor=4F4F52)
+![Plain CSS](https://img.shields.io/badge/PLAIN_CSS-STYLED-3452D1?style=for-the-badge&logo=css&logoColor=F4F4F4&labelColor=4F4F52)
+![Frontend Showcase](https://img.shields.io/badge/FRONTEND-SHOWCASE-C89B2C?style=for-the-badge&labelColor=4F4F52)
 
 Do Nothing is a satirical luxury landing page about the most premium experience possible with almost nothing to offer. The project is designed as a visual front-end showcase, with strong attention on layout, motion, typography, tone, and presentation polish.
 
