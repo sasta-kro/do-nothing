@@ -26,15 +26,15 @@ export function Footer() {
           {homepageCopy.brandName}
         </motion.p>
         <motion.nav className="site-footer__nav" variants={homepageSoftStaggerContainer}>
-          {footerLinks.map((footerLink) => (
+          {footerLinks.map((footerLink, footerLinkIndex) => (
             hasFooterDocumentPopover(footerLink) ? (
               <FooterDocumentLink
-                key={footerLink.label}
+                key={`footer-link-${footerLinkIndex}`}
                 footerLink={footerLink}
               />
             ) : (
               <motion.a
-                key={footerLink.label}
+                key={`footer-link-${footerLinkIndex}`}
                 href={footerLink.href}
                 className="site-footer__link"
                 variants={homepageFadeUpSoft}
