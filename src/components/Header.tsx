@@ -5,6 +5,7 @@ import {
   homepageSoftStaggerContainer,
 } from "../animations/homepageMotion";
 import { homepageCopy, navigationItems } from "../content/homepage";
+import { HeaderNoticeButton } from "./HeaderNoticeButton";
 
 export function Header() {
   return (
@@ -21,14 +22,24 @@ export function Header() {
       </motion.a>
       <motion.div className="site-header__nav" variants={homepageSoftStaggerContainer}>
         {navigationItems.map((navigationItem) => (
-          <motion.a
-            key={navigationItem.label}
-            href={navigationItem.href}
-            className="site-header__link"
-            variants={homepageFadeUpSoft}
-          >
-            {navigationItem.label}
-          </motion.a>
+          <motion.div key={navigationItem.label} variants={homepageFadeUpSoft}>
+            {navigationItem.kind === "link" ? (
+              <a
+                href={navigationItem.href}
+                className="site-header__link"
+              >
+                {navigationItem.label}
+              </a>
+            ) : (
+              <HeaderNoticeButton
+                label={navigationItem.label}
+                noticeTitle={navigationItem.noticeTitle}
+                noticeBody={navigationItem.noticeBody}
+                triggerClassName="site-header__link site-header__nav-trigger"
+                popoverClassName="header-notice__popover"
+              />
+            )}
+          </motion.div>
         ))}
         <motion.button
           type="button"

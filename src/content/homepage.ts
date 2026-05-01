@@ -1,10 +1,20 @@
 import abstractGoldImage from "../../res/donothing_goldenWaves.png";
 import concreteStairsImage from "../../res/donothing_concreteStairs.png";
 
-export type NavigationItem = {
+export type NavigationLinkItem = {
+  kind: "link";
   href: string;
   label: string;
 };
+
+export type NavigationNoticeItem = {
+  kind: "notice";
+  label: string;
+  noticeTitle: string;
+  noticeBody: string;
+};
+
+export type NavigationItem = NavigationLinkItem | NavigationNoticeItem;
 
 export type PricingTier = {
   tierLabel: string;
@@ -43,9 +53,15 @@ export function hasFooterDocumentPopover(
 }
 
 export const navigationItems: NavigationItem[] = [
-  { href: "#heritage", label: "Heritage" },
-  { href: "#atelier", label: "Atelier" },
-  { href: "#vault", label: "The Vault" },
+  { kind: "link", href: "#heritage", label: "About" },
+  { kind: "link", href: "#atelier", label: "Reviews" },
+  {
+    kind: "notice",
+    label: "Language",
+    noticeTitle: "Language Selection",
+    noticeBody:
+      "A multilingual edition is being prepared with proper ceremony. Additional languages will arrive soon.",
+  },
 ];
 
 export const pricingTiers: PricingTier[] = [
