@@ -75,7 +75,7 @@ export const burmeseHomepageContent: HomepageContent = {
         "ငြင်းမရသော အောင်မြင်မှု၏ သက်သေ",
         "အသိအမှတ်ပြု အဆုံးမဲ့ တံဆိပ်",
         "နတ္ထိနယ်ပယ်သို့ အပြည့်အဝ ဝင်ရောက်ခွင့်",
-        "ဘာမှမလုပ်ရန် အခွင့်အရေး၊ ထာဝရ",
+        "ထာဝရ ဘာမှမလုပ်ရန် အခွင့်အရေး",
       ],
       buttonLabel: "အဆုံးမဲ့ ဖြစ်တည်ပါ",
       cardVariant: "outlined",
@@ -107,7 +107,7 @@ export const burmeseHomepageContent: HomepageContent = {
         '"ကျွန်တော် ဒေါ်လာ ၉၉ ပေးခဲ့ပြီး ဘာမှ မရခဲ့ပါဘူး။ ဒါဟာ ကျွန်တော့်ဘဝရဲ့ အကောင်းဆုံး ဝယ်ယူမှုတစ်ခုပဲ။ အခု ကျွန်တော် အရင်ကထက် ပိုပြီး နတ္ထိသဘော ဆောင်နေပြီဗျား။"',
     testimonialSignature: "နတ္ထိဘုံ၏ မြို့စားကြီး",
     testimonialCaption: "၂၀၁၄ ခုနှစ်ကတည်းက တည်ထောင်သူ အဖွဲ့ဝင်",
-    copyrightLabel: "© MMXIV Do Nothing by Sasta. မူပိုင်ခွင့်များ ရယူထားသည်။",
+    copyrightLabel: "© MMXIV Do Nothing by SASTA. All rights reserved",
   },
   footerLinks: [
     {
