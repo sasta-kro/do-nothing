@@ -137,7 +137,7 @@ export const homepageCopy = {
     '"I paid $99 and received nothing. It was the most honest transaction of my life. I am now more absent than ever."',
   testimonialSignature: "The Earl of Nothingness",
   testimonialCaption: "Founding Member Since 2014",
-  copyrightLabel: "© MMXIV Do Nothing International. All rights reserved.",
+  copyrightLabel: "© MMXIV Do Nothing by Sasta. All rights reserved.",
 };
 
 export const footerLinks: FooterLink[] = [
