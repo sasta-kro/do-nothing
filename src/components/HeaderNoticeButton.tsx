@@ -8,6 +8,7 @@ type HeaderNoticeButtonProps = {
   noticeBody: string;
   triggerClassName: string;
   popoverClassName: string;
+  popoverVisibleClassName: string;
 };
 
 export function HeaderNoticeButton({
@@ -16,6 +17,7 @@ export function HeaderNoticeButton({
   noticeBody,
   triggerClassName,
   popoverClassName,
+  popoverVisibleClassName,
 }: HeaderNoticeButtonProps) {
   const tooltipId = useId();
   const {
@@ -49,7 +51,7 @@ export function HeaderNoticeButton({
         id={tooltipId}
         role="tooltip"
         className={`${popoverClassName}${
-          isPopoverVisible ? ` ${popoverClassName}--visible` : ""
+          isPopoverVisible ? ` ${popoverVisibleClassName}` : ""
         }`}
       >
         <p className="header-notice__title">{noticeTitle}</p>

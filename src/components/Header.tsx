@@ -25,8 +25,11 @@ export function Header() {
         {homepageCopy.brandName}
       </motion.a>
       <motion.div className="site-header__nav" variants={homepageSoftStaggerContainer}>
-        {navigationItems.map((navigationItem) => (
-          <motion.div key={navigationItem.label} variants={homepageFadeUpSoft}>
+        {navigationItems.map((navigationItem, navigationItemIndex) => (
+          <motion.div
+            key={`navigation-item-${navigationItemIndex}`}
+            variants={homepageFadeUpSoft}
+          >
             {navigationItem.kind === "link" ? (
               <a
                 href={navigationItem.href}
@@ -46,6 +49,7 @@ export function Header() {
             noticeBody={homepageCopy.inquiryNoticeBody}
             triggerClassName="site-header__button site-header__trigger"
             popoverClassName="header-notice__popover header-notice__popover--cta"
+            popoverVisibleClassName="header-notice__popover--visible"
           />
         </motion.div>
       </motion.div>
