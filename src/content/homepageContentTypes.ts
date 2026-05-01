@@ -72,9 +72,9 @@ export type HomepageContent = {
   footerLinks: FooterLink[];
 };
 
-export type HomepageLocaleCode = "en" | "ru";
+export type HomepageLocaleCode = "en" | "ru" | "mm";
 
-export type HomepageLanguageCode = HomepageLocaleCode | "mm" | "th";
+export type HomepageLanguageCode = HomepageLocaleCode | "th";
 
 export type HomepageLanguageOption = {
   code: HomepageLanguageCode;

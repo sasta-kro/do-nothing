@@ -46,7 +46,9 @@ export function HomepageLocaleProvider({
         homepageLocaleStorageKey,
       );
 
-      return storedLocaleCode === "ru" ? "ru" : defaultHomepageLocaleCode;
+      return storedLocaleCode === "ru" || storedLocaleCode === "mm"
+        ? storedLocaleCode
+        : defaultHomepageLocaleCode;
     },
   );
 

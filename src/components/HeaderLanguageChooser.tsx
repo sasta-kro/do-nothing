@@ -6,7 +6,10 @@ import {
   useState,
 } from "react";
 
-import type { NavigationLanguageItem } from "../content/homepage";
+import type {
+  HomepageLocaleCode,
+  NavigationLanguageItem,
+} from "../content/homepage";
 import { useHomepageLocale } from "../localization/HomepageLocaleProvider";
 
 type HeaderLanguageChooserProps = {
@@ -97,7 +100,7 @@ export function HeaderLanguageChooser({
     }
   }
 
-  function handleLanguageSelection(localeCode: "en" | "ru") {
+  function handleLanguageSelection(localeCode: HomepageLocaleCode) {
     selectLocale(localeCode);
     hideChooserImmediately();
   }
@@ -155,7 +158,9 @@ export function HeaderLanguageChooser({
                   onClick={() => {
                     if (
                       !isComingSoon &&
-                      (languageOption.code === "en" || languageOption.code === "ru")
+                      (languageOption.code === "en" ||
+                        languageOption.code === "ru" ||
+                        languageOption.code === "mm")
                     ) {
                       handleLanguageSelection(languageOption.code);
                     }
