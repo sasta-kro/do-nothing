@@ -4,10 +4,13 @@ import {
   homepageFadeUpSoft,
   homepageStaggerContainer,
 } from "../animations/homepageMotion";
-import { pricingTiers } from "../content/homepage";
+import { useHomepageLocale } from "../localization/HomepageLocaleProvider";
 import { PricingTierCard } from "./PricingTierCard";
 
 export function PricingGrid() {
+  const { homepageContent } = useHomepageLocale();
+  const { pricingTiers } = homepageContent;
+
   return (
     <motion.section
       id="vault"

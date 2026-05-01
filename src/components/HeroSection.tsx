@@ -5,9 +5,12 @@ import {
   homepageFadeUpSoft,
   homepageSoftStaggerContainer,
 } from "../animations/homepageMotion";
-import { homepageCopy } from "../content/homepage";
+import { useHomepageLocale } from "../localization/HomepageLocaleProvider";
 
 export function HeroSection() {
+  const { homepageContent } = useHomepageLocale();
+  const { homepageCopy } = homepageContent;
+
   return (
     <motion.section
       id="top"

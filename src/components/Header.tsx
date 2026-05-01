@@ -4,10 +4,14 @@ import {
   homepageFadeUpSoft,
   homepageSoftStaggerContainer,
 } from "../animations/homepageMotion";
-import { homepageCopy, navigationItems } from "../content/homepage";
+import { useHomepageLocale } from "../localization/HomepageLocaleProvider";
+import { HeaderLanguageChooser } from "./HeaderLanguageChooser";
 import { HeaderNoticeButton } from "./HeaderNoticeButton";
 
 export function Header() {
+  const { homepageContent } = useHomepageLocale();
+  const { homepageCopy, navigationItems } = homepageContent;
+
   return (
     <motion.header
       className="site-header"
@@ -31,19 +35,13 @@ export function Header() {
                 {navigationItem.label}
               </a>
             ) : (
-              <HeaderNoticeButton
-                label={navigationItem.label}
-                noticeTitle={navigationItem.noticeTitle}
-                noticeBody={navigationItem.noticeBody}
-                triggerClassName="site-header__link site-header__nav-trigger"
-                popoverClassName="header-notice__popover"
-              />
+              <HeaderLanguageChooser navigationItem={navigationItem} />
             )}
           </motion.div>
         ))}
         <motion.div variants={homepageFadeUpSoft}>
           <HeaderNoticeButton
-            label="Inquire"
+            label={homepageCopy.inquiryButtonLabel}
             noticeTitle={homepageCopy.inquiryNoticeTitle}
             noticeBody={homepageCopy.inquiryNoticeBody}
             triggerClassName="site-header__button site-header__trigger"

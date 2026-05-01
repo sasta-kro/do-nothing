@@ -6,13 +6,15 @@ import {
   homepageViewportRevealMotionProps,
 } from "../animations/homepageMotion";
 import {
-  footerLinks,
   hasFooterDocumentPopover,
-  homepageCopy,
 } from "../content/homepage";
+import { useHomepageLocale } from "../localization/HomepageLocaleProvider";
 import { FooterDocumentLink } from "./FooterDocumentLink";
 
 export function Footer() {
+  const { homepageContent } = useHomepageLocale();
+  const { footerLinks, homepageCopy } = homepageContent;
+
   return (
     <motion.footer
       className="site-footer"

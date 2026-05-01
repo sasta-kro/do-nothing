@@ -10,10 +10,19 @@ import { Header } from "./components/Header";
 import { HeroSection } from "./components/HeroSection";
 import { PricingGrid } from "./components/PricingGrid";
 import { TestimonialSection } from "./components/TestimonialSection";
+import {
+  HomepageLocaleProvider,
+  useHomepageLocale,
+} from "./localization/HomepageLocaleProvider";
 
-export default function App() {
+function HomepageLayout() {
+  const { activeLocaleCode } = useHomepageLocale();
+
   return (
-    <main className="homepage">
+    <main
+      className={`homepage homepage--locale-${activeLocaleCode}`}
+      lang={activeLocaleCode}
+    >
       <div className="homepage__shell">
         <motion.div
           variants={homepageStartupStaggerContainer}
@@ -28,5 +37,13 @@ export default function App() {
       </div>
       <Footer />
     </main>
+  );
+}
+
+export default function App() {
+  return (
+    <HomepageLocaleProvider>
+      <HomepageLayout />
+    </HomepageLocaleProvider>
   );
 }

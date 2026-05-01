@@ -8,9 +8,13 @@ import {
   homepageStaggerContainer,
   homepageViewportRevealMotionProps,
 } from "../animations/homepageMotion";
-import { homepageCopy, homepageImages } from "../content/homepage";
+import { homepageImages } from "../content/homepage";
+import { useHomepageLocale } from "../localization/HomepageLocaleProvider";
 
 export function FeatureShowcaseSection() {
+  const { homepageContent } = useHomepageLocale();
+  const { homepageCopy } = homepageContent;
+
   return (
     <motion.section
       id="heritage"
@@ -22,7 +26,7 @@ export function FeatureShowcaseSection() {
         <motion.div className="heritage-panel__visual" variants={homepageFadeIn}>
           <motion.img
             src={homepageImages.staircasePlaceholder}
-            alt="Placeholder staircase scene"
+            alt=""
             className="heritage-panel__image"
             referrerPolicy="no-referrer"
             variants={homepageFadeIn}
@@ -60,13 +64,13 @@ export function FeatureShowcaseSection() {
         <motion.article className="abstract-panel" variants={homepageFadeUpSoft}>
           <motion.img
             src={homepageImages.abstractGoldPlaceholder}
-            alt="Placeholder abstract gold texture"
+            alt=""
             className="abstract-panel__image"
             referrerPolicy="no-referrer"
             variants={homepageFadeIn}
           />
           <div className="abstract-panel__overlay" />
-          <p className="abstract-panel__wordmark">Nothingness</p>
+          <p className="abstract-panel__wordmark">{homepageCopy.abstractWordmark}</p>
         </motion.article>
       </motion.div>
     </motion.section>
