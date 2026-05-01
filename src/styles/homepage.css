@@ -10,7 +10,7 @@
 .homepage__shell {
   width: min(100%, 1440px);
   margin: 0 auto;
-  padding: 1rem 2.75rem 2rem;
+  padding: 1rem clamp(1rem, 4vw, 4.75rem) 2rem;
 }
 
 .site-header {
@@ -152,18 +152,23 @@
 }
 
 .pricing-grid-wrap {
-  width: min(100%, 1188px);
+  --pricing-card-min-width: 16rem;
+  width: 100%;
+  max-width: 1288px;
   margin: 0 auto;
+  container-type: inline-size;
 }
 
 .pricing-grid {
   display: grid;
-  gap: 1rem;
+  grid-template-columns: 1fr;
+  gap: clamp(0.625rem, 1.6cqw, 1.25rem);
 }
 
 .pricing-card {
   position: relative;
   display: flex;
+  min-width: 0;
   min-height: 22.75rem;
   flex-direction: column;
   overflow: hidden;
@@ -262,6 +267,10 @@
   padding-top: 0.125rem;
   font-size: 0.75rem;
   color: var(--color-gold-primary);
+}
+
+.pricing-card__feature-text {
+  min-width: 0;
 }
 
 .pricing-card__feature-text--accent {
@@ -751,6 +760,22 @@
   color: rgba(209, 181, 115, 0.76);
 }
 
+@container (min-width: 36rem) {
+  .pricing-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .pricing-card__title {
+    white-space: nowrap;
+  }
+}
+
+@container (min-width: 68rem) {
+  .pricing-grid {
+    grid-template-columns: repeat(4, minmax(var(--pricing-card-min-width), 1fr));
+  }
+}
+
 @media (min-width: 640px) {
   .heritage-side-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -758,7 +783,6 @@
 }
 
 @media (min-width: 768px) {
-  .homepage__shell,
   .site-footer__shell {
     padding-right: 4.25rem;
     padding-left: 4.25rem;
@@ -791,17 +815,12 @@
     padding-bottom: 4.25rem;
   }
 
-  .pricing-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .pricing-card {
     min-height: 23.75rem;
   }
 
   .pricing-card__title {
     font-size: 1.52rem;
-    white-space: nowrap;
   }
 
   .pricing-card__price {
@@ -869,8 +888,6 @@
 @media (min-width: 1280px) {
   .homepage__shell {
     padding-top: 1.25rem;
-    padding-right: 4.75rem;
-    padding-left: 4.75rem;
   }
 
   .hero {
@@ -880,15 +897,6 @@
 
   .hero__title {
     font-size: 4.1rem;
-  }
-
-  .pricing-grid-wrap {
-    width: min(100%, 1224px);
-  }
-
-  .pricing-grid {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.25rem;
   }
 
   .pricing-card {
