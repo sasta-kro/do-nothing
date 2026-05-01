@@ -3,7 +3,7 @@ import type { HomepageContent } from "../../homepageContentTypes";
 export const burmeseHomepageContent: HomepageContent = {
   navigationItems: [
     { kind: "link", href: "#heritage", label: "ရာဇဝင်" },
-    { kind: "link", href: "#atelier", label: "အကဲဖြတ်ချက်များ" },
+    { kind: "link", href: "#atelier", label: "ချီးမွမ်းထောပနာ" },
     {
       kind: "language",
       label: "ဘာသာစကား",
@@ -37,7 +37,7 @@ export const burmeseHomepageContent: HomepageContent = {
         "ရွှေချထားသော နတ္ထိ မှတ်တမ်း",
         "ထပ်တူကျသော အသက်ရှူပုံစံများ",
         "တိုးပွားလာသော ကိုယ်ပိုင်ဂုဏ်သိက္ခာ",
-        "ကြွားဝါခွင့်",
+        "ဂုဏ်ယူဝင့်ကြွားခွင့်",
       ],
       buttonLabel: "ဂုဏ်ပုဒ် ရယူပါ",
       cardVariant: "base",
@@ -45,12 +45,12 @@ export const burmeseHomepageContent: HomepageContent = {
     },
     {
       tierLabel: "အထက်တန်းလွှာ ရွေးချယ်မှု",
-      title: "ဇိမ်ခံ နတ္ထိ",
+      title: "ဂုဏ်ဒြပ်ဆောင် နတ္ထိ",
       price: "၁၂",
       billingLabel: "/ လစဉ်",
       features: [
         "ပရီမီယံ အခွင့်အရေးအားလုံး ပါဝင်သည်",
-        "ကွမ်တမ်အဆင့် ပျင်းရိခြင်း",
+        "ကွမ်တမ်အဆင့် ငြိမ်သက်မှု",
         "ဦးစားပေး အနှောင့်အယှက်မပေးရ",
         "လက်မှတ်ရေးထိုးထားသော 'နတ္ထိ' ကတ်",
         "အဆင့်မြင့် သင်္ကေတအရ အသိအမှတ်ပြုမှု",
@@ -63,15 +63,15 @@ export const burmeseHomepageContent: HomepageContent = {
     },
     {
       tierLabel: "အဆုံးစွန် အထွတ်အထိပ်",
-      title: "အဆုံးမဲ့ နတ္ထိ",
+      title: "အနန္တ နတ္ထိ အဆုံးမဲ့",
       price: "၉၉",
       billingLabel: "/ လစဉ်",
       features: [
-        "ဇိမ်ခံ အခွင့်အရေးအားလုံး ပါဝင်သည်",
+        "ဂုဏ်ဒြပ်ဆောင် နတ္ထိ အခွင့်အရေးအားလုံး ပါဝင်သည်",
         "စကြဝဠာအဆင့် မတည်ရှိမှု",
         "လက်တွေ့ဘဝအားလုံးမှ ဖယ်ချန်ခံရမှု",
         "ပကတိ နတ္ထိ၏ အမွေအနှစ်",
-        "ကိုယ်ရေးရာဇဝင်အတွက် အသက်မွေးဝမ်းကြောင်းဆိုင်ရာ အထောက်အကူ",
+        "ကိုယ်ရေးရာဇဝင်အတွက် ကြီးကျယ်သော အထောက်အပံ့",
         "ငြင်းမရသော အောင်မြင်မှု၏ သက်သေ",
         "အသိအမှတ်ပြု အဆုံးမဲ့ တံဆိပ်",
         "နတ္ထိနယ်ပယ်သို့ အပြည့်အဝ ဝင်ရောက်ခွင့်",
@@ -91,7 +91,7 @@ export const burmeseHomepageContent: HomepageContent = {
         "ကမ္ဘာ့ အခမ်းနားဆုံးသော နတ္ထိ အတွေ့အကြုံမှ ကြိုဆိုပါသည်။",
     heroDescriptionLine2:
         "မည်သူမျှ ပြီးပြည့်စုံသော နတ္ထိသဘောကို ဤမျှ တိကျသေချာစွာ မပေးစွမ်းနိုင်ပါ။",
-    featureTitle: "ပြိုင်ဘက်ကင်းသော မျက်ကွယ်ပြုမှု",
+    featureTitle: "အတုလွတ်သော ကင်းမဲ့ခြင်း",
     featureDescription:
         'ဆယ်စုနှစ်တစ်ခုစာ သန့်စင်မှုက နတ္ထိ သိပ္ပံပညာကို ပုံဖော်ပေးခဲ့သည်။ မာရီယာနာ တောင်ထွတ်မှ ဧဝရက် ချောက်ကမ်းပါး ဌာနခွဲအထိ ကျွန်ုပ်တို့၏ သုတေသနအဖွဲ့များသည် အားထုတ်မှုများကို ထပ်မံလျှော့ချရန် ကော်ပိုရိတ် ဆက်သွယ်ရေးအားလုံးမှ "e" စာလုံးကို ဖယ်ရှားရေးအတွက် ဆက်လက် သုတေသနပြုနေကြသည်။ ဖေဖော်ဝါရီ ၃၁ ရက်တွင် ကြေညာရန် စီစဉ်ထားသည်။',
     spotlightTitle: "၁၀၀% အပြည့်အဝ အလုပ်လုပ်ချိန်",
@@ -104,18 +104,18 @@ export const burmeseHomepageContent: HomepageContent = {
     languageChooserCurrentLabel: "လက်ရှိ",
     languageChooserComingSoonLabel: "မကြာမီ လာမည်",
     testimonialQuote:
-        '"ကျွန်တော် ဒေါ်လာ ၉၉ ပေးခဲ့ပြီး ဘာမှ မရခဲ့ပါဘူး။ ဒါဟာ ကျွန်တော့်ဘဝရဲ့ အရိုးသားဆုံး အရောင်းအဝယ်ပါပဲ။ အခု ကျွန်တော် အရင်ကထက် ပိုပြီး နတ္ထိသဘော ဆောင်နေပါပြီ။"',
-    testimonialSignature: "နတ္ထိနယ်ပယ်၏ မြို့စားကြီး",
+        '"ကျွန်တော် ဒေါ်လာ ၉၉ ပေးခဲ့ပြီး ဘာမှ မရခဲ့ပါဘူး။ ဒါဟာ ကျွန်တော့်ဘဝရဲ့ အကောင်းဆုံး ဝယ်ယူမှူတစ်ခုဘဲ။ အခု ကျွန်တော် အရင်ကထက် ပိုပြီး နတ္ထိသဘော ဆောင်နေပြီဗျား။"',
+    testimonialSignature: "နတ္ထိဘုံ၏ မြို့စားကြီး",
     testimonialCaption: "၂၀၁၄ ခုနှစ်ကတည်းက တည်ထောင်သူ အဖွဲ့ဝင်",
     copyrightLabel: "© MMXIV Do Nothing by Sasta. မူပိုင်ခွင့်များ ရယူထားသည်။",
   },
   footerLinks: [
     {
       href: "#top",
-      label: "နတ္ထိ စည်းမျဉ်းများ",
+      label: "နတ္ထိ ပဋိညာဉ်",
       documentPopover: {
-        charterLabel: "အပိုဒ် ၀",
-        documentTitle: "နတ္ထိ စည်းမျဉ်းများ",
+        charterLabel: "အပိုဒ်တော် ၀",
+        documentTitle: "နတ္ထိ ပဋိညာဉ်",
         documentSubtitle: "ရည်ရွယ်ချက်ရှိရှိ ဘာမှမလုပ်ခြင်း၏ တော်ဝင်ပဋိညာဉ်စာတမ်း",
         bodyLines: [
           "ပြီးပြည့်စုံသော နတ္ထိသဘောသည် ညှိနှိုင်းရန် အကြောင်းအရာ မကျန်ရစ်စေသောကြောင့် မည်သည့် အသက်ဝင်သော စည်းမျဉ်းများကိုမျှ ရေးဆွဲထားခြင်း မရှိပါ။",
@@ -128,7 +128,7 @@ export const burmeseHomepageContent: HomepageContent = {
       href: "#top",
       label: "ကိုယ်ရေးကိုယ်တာ မှတ်တမ်း",
       documentPopover: {
-        charterLabel: "မှတ်တမ်း ၂",
+        charterLabel: "မှတ်တမ်းတော် ၂",
         documentTitle: "ကိုယ်ရေးကိုယ်တာ မှတ်တမ်း",
         documentSubtitle: "လျှို့ဝှက် ချန်လှပ်ထားခြင်း မှတ်ပုံတင်",
         bodyLines: [
@@ -142,7 +142,7 @@ export const burmeseHomepageContent: HomepageContent = {
       href: "#top",
       label: "နတ္ထိ ကျင့်ဝတ်များ",
       documentPopover: {
-        charterLabel: "အမိန့်အမှတ် ၁",
+        charterLabel: "အမိန့်တော်ပြန်တမ်း ၁",
         documentTitle: "နတ္ထိ ကျင့်ဝတ်များ",
         documentSubtitle: "သန့်စင်သော ထိန်းချုပ်မှု၏ ထာဝရ ကုဒ်",
         bodyLines: [
