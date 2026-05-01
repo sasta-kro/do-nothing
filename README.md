@@ -1,5 +1,12 @@
 # Do Nothing
 
+![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-6-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![Motion](https://img.shields.io/badge/Motion-12-0F172A?style=for-the-badge&logo=framer&logoColor=white)
+![CSS](https://img.shields.io/badge/Plain_CSS-Styled-264DE4?style=for-the-badge&logo=css&logoColor=white)
+![Frontend Showcase](https://img.shields.io/badge/Frontend-Showcase-C89B2C?style=for-the-badge)
+
 Do Nothing is a satirical luxury landing page about the most premium experience possible with almost nothing to offer. The project is designed as a visual front-end showcase, with strong attention on layout, motion, typography, tone, and presentation polish.
 
 The project exists for two reasons:
