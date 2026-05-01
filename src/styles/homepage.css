@@ -208,8 +208,8 @@
 .hero__description {
   width: min(100%, 35rem);
   margin: 1.5rem auto 0;
-  font-size: 0.9rem;
-  line-height: 1.625rem;
+  font-size: 1.1rem;
+  line-height: 1.6rem;
   text-wrap: balance;
   color: var(--color-copy-soft);
 }
@@ -408,7 +408,7 @@
 .heritage-section {
   display: grid;
   gap: 1.25rem;
-  padding: 3.5rem 0 5.5rem;
+  padding: 3.5rem 0 4.5rem;
 }
 
 .heritage-panel {
